@@ -81,6 +81,8 @@
                             right: 1px;
                             width: 45px;
                             height: 35px;
+                            border-top-left-radius: 0;
+                            border-bottom-left-radius: 0;
 
                         }
 

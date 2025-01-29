@@ -313,8 +313,38 @@
 
         <div class="jewellery-bag-area">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
+                <!-- <div class="col-md-4">
+                    <div class="image-container">
+                        <img src="images/12.png" alt="jewellery">
+                        <div class="text-overlay">
+                            <h4>Dhirsons Jewellers</h4>
+                            <p>Lorem ipsum dolor sit amet, consetetur.</p>
+                            <button>Shop Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="image-container">
+                        <img src="images/01.png" alt="bag">
+                        <div class="text-overlay">
+                            <h4>Dhirsons Jewellers</h4>
+                            <p>Lorem ipsum dolor sit amet, consetetur.</p>
+                            <button>Shop Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="image-container">
+                        <img src="images/13.png" alt="shoe">
+                        <div class="text-overlay">
+                            <h4>Aquazzura</h4>
+                            <p>Lorem ipsum dolor sit amet, consetetur.</p><br>
+                            <button>Shop Now</button>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="grid-container">
+                    <div class="grid-item">
                         <div class="image-container">
                             <img src="images/12.png" alt="jewellery">
                             <div class="text-overlay">
@@ -324,7 +354,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="grid-item">
                         <div class="image-container">
                             <img src="images/01.png" alt="bag">
                             <div class="text-overlay">
@@ -334,7 +364,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="grid-item">
                         <div class="image-container">
                             <img src="images/13.png" alt="shoe">
                             <div class="text-overlay">
@@ -408,11 +438,85 @@
             </div>
         </div> -->
 
+        <div class="love-brand-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="love-brand-outer">
+                            <div class="love-brand-heading">
+                                <span class="heading-left">Most loved brands</span>
+                            </div>
+                            <div class="love-brand-slider">
+                                <div class="love-brand-slick-slider">
+                                    <div class="grid-item">
+                                        <a href="#" class="category-item">
+                                            <img src="images/loved-1.png" alt="" class="img-fluid">
+                                            <p>DSJ</p>
+                                            <h6>Jewellery</h6>
+                                        </a>
+                                    </div>
+                                    <div class="grid-item">
+                                        <a href="#" class="category-item">
+                                            <img src="images/loved-2.png" alt="" class="img-fluid">
+                                            <p>BiBa</p>
+                                            <h6>Ethnic Wear</h6>
+                                        </a>
+                                    </div>
+                                    <div class="grid-item">
+                                        <a href="#" class="category-item">
+                                            <img src="images/loved-3.png" alt="" class="img-fluid">
+                                            <p>Zari</p>
+                                            <h6>Silk Sarees</h6>
+                                        </a>
+                                    </div>
+                                    <div class="grid-item">
+                                        <a href="#" class="category-item">
+                                            <img src="images/loved-4.png" alt="" class="img-fluid">
+                                            <p>Aquazzura</p>
+                                            <h6>Luxury Shoes</h6>
+                                        </a>
+                                    </div>
+                                    <div class="grid-item">
+                                        <a href="#" class="category-item">
+                                            <img src="images/loved-1.png" alt="" class="img-fluid">
+                                            <p>DSJ</p>
+                                            <h6>Jewellery</h6>
+                                        </a>
+                                    </div>
+                                    <div class="grid-item">
+                                        <a href="#" class="category-item">
+                                            <img src="images/loved-2.png" alt="" class="img-fluid">
+                                            <p>BiBa</p>
+                                            <h6>Ethnic Wear</h6>
+                                        </a>
+                                    </div>
+                                    <div class="grid-item">
+                                        <a href="#" class="category-item">
+                                            <img src="images/loved-3.png" alt="" class="img-fluid">
+                                            <p>Zari</p>
+                                            <h6>Silk Sarees</h6>
+                                        </a>
+                                    </div>
+                                    <div class="grid-item">
+                                        <a href="#" class="category-item">
+                                            <img src="images/loved-4.png" alt="" class="img-fluid">
+                                            <p>Aquazzura</p>
+                                            <h6>Luxury Shoes</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="product-area">
             <div class="container">
                 <div class="row">
                     <div class="product-heading">
-                        <p>Lorem Ipsum Doler</p>
+                        <p>New Collection</p>
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="pro-card">
@@ -616,7 +720,7 @@
             </div>
         </div>
 
-        <div class="jewellery-bag-area">
+        <!-- <div class="jewellery-bag-area">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
@@ -646,6 +750,143 @@
                                 <h4>Aquazzura</h4>
                                 <p>Lorem ipsum dolor sit amet, consetetur.</p><br>
                                 <button>Shop Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="jewellery-bag-area">
+            <div class="container">
+                <div class="row">
+                    <!-- <div class="col-md-4">
+                        <div class="image-container">
+                            <img src="images/12.png" alt="jewellery">
+                            <div class="text-overlay">
+                                <h4>Dhirsons Jewellers</h4>
+                                <p>Lorem ipsum dolor sit amet, consetetur.</p>
+                                <button>Shop Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="image-container">
+                            <img src="images/01.png" alt="bag">
+                            <div class="text-overlay">
+                                <h4>Dhirsons Jewellers</h4>
+                                <p>Lorem ipsum dolor sit amet, consetetur.</p>
+                                <button>Shop Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="image-container">
+                            <img src="images/13.png" alt="shoe">
+                            <div class="text-overlay">
+                                <h4>Aquazzura</h4>
+                                <p>Lorem ipsum dolor sit amet, consetetur.</p><br>
+                                <button>Shop Now</button>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="grid-container">
+                        <div class="grid-item">
+                            <div class="image-container">
+                                <img src="images/12.png" alt="jewellery">
+                                <div class="text-overlay">
+                                    <h4>Dhirsons Jewellers</h4>
+                                    <p>Lorem ipsum dolor sit amet, consetetur.</p>
+                                    <button>Shop Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="image-container">
+                                <img src="images/01.png" alt="bag">
+                                <div class="text-overlay">
+                                    <h4>Dhirsons Jewellers</h4>
+                                    <p>Lorem ipsum dolor sit amet, consetetur.</p>
+                                    <button>Shop Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="image-container">
+                                <img src="images/13.png" alt="shoe">
+                                <div class="text-overlay">
+                                    <h4>Aquazzura</h4>
+                                    <p>Lorem ipsum dolor sit amet, consetetur.</p><br>
+                                    <button>Shop Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="decor-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="decor-outer">
+                            <div class="decor-heading">
+                                <span class="heading-left">Home Decor Recommendations</span>
+                                <span class="view-right"><a href="">View all</a></span>
+                            </div>
+                            <div class="decor-slider">
+                                <div class="decor-slick-slider">
+                                    <div class="grid-item">
+                                        <a href="#" class="category-item">
+                                            <img src="images/decor-1.png" alt="" class="img-fluid">
+                                            <p>Black Showpieces & Figurines For Home…</p>
+                                            <h6>$34.99</h6>
+                                        </a>
+                                    </div>
+                                    <div class="grid-item">
+                                        <a href="#" class="category-item">
+                                            <img src="images/decor-2.png" alt="" class="img-fluid">
+                                            <p>Golden and Brown Showpieces & Figurie…</p>
+                                            <h6>$34.99</h6>
+                                        </a>
+                                    </div>
+                                    <div class="grid-item">
+                                        <a href="#" class="category-item">
+                                            <img src="images/decor-3.png" alt="" class="img-fluid">
+                                            <p>Black Showpieces & Figurines for Home…</p>
+                                            <h6>$34.99</h6>
+                                        </a>
+                                    </div>
+                                    <div class="grid-item">
+                                        <a href="#" class="category-item">
+                                            <img src="images/decor-4.png" alt="" class="img-fluid">
+                                            <p>Chocolate Baklava - Holiday Special Box</p>
+                                            <h6>$34.99</h6>
+                                        </a>
+                                    </div>
+                                    <div class="grid-item">
+                                        <a href="#" class="category-item">
+                                            <img src="images/decor-5.png" alt="" class="img-fluid">
+                                            <p>Assorted Indian Fusion Sweets</p>
+                                            <h6>$34.99</h6>
+                                        </a>
+                                    </div>
+                                    <div class="grid-item">
+                                        <a href="#" class="category-item">
+                                            <img src="images/decor-6.png" alt="" class="img-fluid">
+                                            <p>Izhaar Gift Box</p><br>
+                                            <h6>$34.99</h6>
+                                        </a>
+                                    </div>
+                                    <div class="grid-item">
+                                        <a href="#" class="category-item">
+                                            <img src="images/decor-7.png" alt="" class="img-fluid">
+                                            <p>Black Showpieces & Figurines For Home…</p>
+                                            <h6>$34.99</h6>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -745,16 +986,16 @@
         });
     </script>
 
-    <!-- <script>
+    <script>
         $(document).ready(function() {
-            $('.brand-slick-slider').slick({
-                slidesToShow: 6, // Number of items visible at once
-                slidesToScroll: 1, // Number of slides to scroll at a time
-                autoplay: true, // Enables automatic sliding
-                autoplaySpeed: 2000, // Slide every 2 seconds
-                arrows: true, // Shows navigation arrows
-                dots: true, // Shows dots for navigation
-                infinite: true, // Enables infinite looping
+            $('.love-brand-slick-slider').slick({
+                slidesToShow: 7, 
+                slidesToScroll: 1,
+                autoplay: true, 
+                autoplaySpeed: 2000, 
+                arrows: true, 
+                dots: false, 
+                infinite: true, 
                 responsive: [{
                         breakpoint: 1024,
                         settings: {
@@ -776,7 +1017,7 @@
                 ]
             });
         });
-    </script> -->
+    </script>
 
     <!-- <script>
         $(document).ready(function() {
@@ -816,15 +1057,54 @@
     <script>
         $(document).ready(function() {
             $('.brand-slick-slider').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1, 
+                autoplay: false, 
+                autoplaySpeed: 2000, 
+                arrows: true, 
+                dots: false, 
+                infinite: true, 
+                centerMode: false, 
+                variableWidth: false,
+                prevArrow: '<button type="button" class="slick-prev"><img src="images/left-arrow.png" alt="Previous" /></button>', // Left arrow
+                nextArrow: '<button type="button" class="slick-next"><img src="images/right-arrow.png" alt="Next" /></button>', // Right arrow 
+                responsive: [{
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3 
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2 
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1 
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('.deal-slick-slider').slick({
                 slidesToShow: 6, // Show 6 full images
                 slidesToScroll: 1, // Scroll one at a time
                 autoplay: false, // Disable auto sliding
                 autoplaySpeed: 2000, // Set auto speed (if autoplay is enabled)
                 arrows: true, // Enable navigation arrows
-                dots: true, // Enable navigation dots
+                dots: false, // Enable navigation dots
                 infinite: true, // Enable infinite scrolling
                 centerMode: false, // Keep slides aligned to the left
                 variableWidth: false, // Maintain equal width for slides
+                prevArrow: '<button type="button" class="slick-prev"><img src="images/left-arrow.png" alt="Previous" /></button>',
+                nextArrow: '<button type="button" class="slick-next"><img src="images/right-arrow.png" alt="Next" /></button>', 
                 responsive: [{
                         breakpoint: 1024,
                         settings: {
@@ -850,32 +1130,34 @@
 
     <script>
         $(document).ready(function() {
-            $('.deal-slick-slider').slick({
-                slidesToShow: 6, // Show 6 full images
-                slidesToScroll: 1, // Scroll one at a time
-                autoplay: false, // Disable auto sliding
-                autoplaySpeed: 2000, // Set auto speed (if autoplay is enabled)
-                arrows: true, // Enable navigation arrows
-                dots: true, // Enable navigation dots
-                infinite: true, // Enable infinite scrolling
-                centerMode: false, // Keep slides aligned to the left
-                variableWidth: false, // Maintain equal width for slides
+            $('.decor-slick-slider').slick({
+                slidesToShow: 6, 
+                slidesToScroll: 1, 
+                autoplay: false, 
+                autoplaySpeed: 2000, 
+                arrows: true, 
+                dots: false, 
+                infinite: true, 
+                centerMode: false, 
+                variableWidth: false, 
+                prevArrow: '<button type="button" class="slick-prev"><img src="images/left-arrow.png" alt="Previous" /></button>',
+                nextArrow: '<button type="button" class="slick-next"><img src="images/right-arrow.png" alt="Next" /></button>', 
                 responsive: [{
                         breakpoint: 1024,
                         settings: {
-                            slidesToShow: 3 // Show 3 slides on medium screens
+                            slidesToShow: 3 
                         }
                     },
                     {
                         breakpoint: 768,
                         settings: {
-                            slidesToShow: 2 // Show 2 slides on tablets
+                            slidesToShow: 2 
                         }
                     },
                     {
                         breakpoint: 480,
                         settings: {
-                            slidesToShow: 1 // Show 1 slide on mobile
+                            slidesToShow: 1 
                         }
                     }
                 ]
