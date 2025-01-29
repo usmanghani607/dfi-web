@@ -3,7 +3,6 @@
 
 <head>
     <?php include 'header.php'; ?>
-    <?php include 'cart.php'; ?>
     <link rel="shortcut icon" href="images/favicon.png">
 
     <style>
@@ -11,6 +10,39 @@
 </head>
 
 <body>
+
+    <div class="header-top">
+        <div class="clsHead">
+            <div class="container">
+                <div class="topsectionimppage">
+                    <div class="clsPgWidth clsBreadcrumb">
+                        <div class="tophumbmmm" onclick="opensidemenu();"><img src="images/hambm.svg" alt="menu"></div>
+                        <ul class="topmenuslider slick-initialized slick-slider">
+                            <div class="slick-list draggable">
+                                <div class="slick-track" style="opacity: 1; width: 90000px; transform: translate3d(0px, 0px, 0px);">
+                                    <li class="slick-slide down slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="0"><a href="indian-grocery-delivery/near-me-in-chicago-il-" title="Grocery" tabindex="0">Groceries</a></li>
+                                    <li class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1"><a href="">Food</a></li>
+                                    <li class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1"><a href="" class="active">Direct from India</a></li>
+                                    <li class="slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1"><a href="">Fashion</a></li>
+                                    <li class="slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1"><a href="">Bestseller</a></li>
+                                    <li class="slick-slide" data-slick-index="5" aria-hidden="true" tabindex="-1"><a href="">Buy it again</a></li>
+                                    <li class="slick-slide" data-slick-index="6" aria-hidden="true" tabindex="-1"><a href="">Same day delivery</a></li>
+                                    <li class="slick-slide" data-slick-index="7" aria-hidden="true" tabindex="-1"><a href="">Keep shopping for</a></li>
+                                    <li class="slick-slide" data-slick-index="8" aria-hidden="true" tabindex="-1"><a href="">Games</a></li>
+                                    <li class="slick-slide" data-slick-index="9" aria-hidden="true" tabindex="-1"><a href="">Events</a></li>
+                                    <li class="slick-slide" data-slick-index="10" aria-hidden="true" tabindex="-1"><a href="">QPay</a></li>
+                                    <li class="slick-slide" data-slick-index="11" aria-hidden="true" tabindex="-1"><a href="">Gift Card</a></li>
+                                    <li class="slick-slide" data-slick-index="12" aria-hidden="true" tabindex="-1"><a href="">Quicklly Pass</a></li>
+                                    <li class="slick-slide" data-slick-index="13" aria-hidden="true" tabindex="-1"><a href="">Refer a Friend</a></li>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="index-page" class="index-page">
         <div class="banner-slider">
             <div>
@@ -303,8 +335,8 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div> 
-                        </div> 
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -989,13 +1021,13 @@
     <script>
         $(document).ready(function() {
             $('.love-brand-slick-slider').slick({
-                slidesToShow: 7, 
+                slidesToShow: 7,
                 slidesToScroll: 1,
-                autoplay: true, 
-                autoplaySpeed: 2000, 
-                arrows: true, 
-                dots: false, 
-                infinite: true, 
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: true,
+                dots: false,
+                infinite: true,
                 responsive: [{
                         breakpoint: 1024,
                         settings: {
@@ -1058,32 +1090,32 @@
         $(document).ready(function() {
             $('.brand-slick-slider').slick({
                 slidesToShow: 6,
-                slidesToScroll: 1, 
-                autoplay: false, 
-                autoplaySpeed: 2000, 
-                arrows: true, 
-                dots: false, 
-                infinite: true, 
-                centerMode: false, 
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                arrows: true,
+                dots: false,
+                infinite: true,
+                centerMode: false,
                 variableWidth: false,
                 prevArrow: '<button type="button" class="slick-prev"><img src="images/left-arrow.png" alt="Previous" /></button>', // Left arrow
                 nextArrow: '<button type="button" class="slick-next"><img src="images/right-arrow.png" alt="Next" /></button>', // Right arrow 
                 responsive: [{
                         breakpoint: 1024,
                         settings: {
-                            slidesToShow: 3 
+                            slidesToShow: 3
                         }
                     },
                     {
                         breakpoint: 768,
                         settings: {
-                            slidesToShow: 2 
+                            slidesToShow: 2
                         }
                     },
                     {
                         breakpoint: 480,
                         settings: {
-                            slidesToShow: 1 
+                            slidesToShow: 1
                         }
                     }
                 ]
@@ -1104,7 +1136,7 @@
                 centerMode: false, // Keep slides aligned to the left
                 variableWidth: false, // Maintain equal width for slides
                 prevArrow: '<button type="button" class="slick-prev"><img src="images/left-arrow.png" alt="Previous" /></button>',
-                nextArrow: '<button type="button" class="slick-next"><img src="images/right-arrow.png" alt="Next" /></button>', 
+                nextArrow: '<button type="button" class="slick-next"><img src="images/right-arrow.png" alt="Next" /></button>',
                 responsive: [{
                         breakpoint: 1024,
                         settings: {
@@ -1131,33 +1163,33 @@
     <script>
         $(document).ready(function() {
             $('.decor-slick-slider').slick({
-                slidesToShow: 6, 
-                slidesToScroll: 1, 
-                autoplay: false, 
-                autoplaySpeed: 2000, 
-                arrows: true, 
-                dots: false, 
-                infinite: true, 
-                centerMode: false, 
-                variableWidth: false, 
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                arrows: true,
+                dots: false,
+                infinite: true,
+                centerMode: false,
+                variableWidth: false,
                 prevArrow: '<button type="button" class="slick-prev"><img src="images/left-arrow.png" alt="Previous" /></button>',
-                nextArrow: '<button type="button" class="slick-next"><img src="images/right-arrow.png" alt="Next" /></button>', 
+                nextArrow: '<button type="button" class="slick-next"><img src="images/right-arrow.png" alt="Next" /></button>',
                 responsive: [{
                         breakpoint: 1024,
                         settings: {
-                            slidesToShow: 3 
+                            slidesToShow: 3
                         }
                     },
                     {
                         breakpoint: 768,
                         settings: {
-                            slidesToShow: 2 
+                            slidesToShow: 2
                         }
                     },
                     {
                         breakpoint: 480,
                         settings: {
-                            slidesToShow: 1 
+                            slidesToShow: 1
                         }
                     }
                 ]
