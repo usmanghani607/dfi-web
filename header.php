@@ -1060,6 +1060,104 @@
 
     </header>
 
+    <div class="header-top">
+        <div class="clsHead">
+            <div class="container">
+                <div class="topsectionimppage">
+                    <div class="clsPgWidth clsBreadcrumb">
+                        <div class="tophumbmmm" onclick="opensidemenu();"><img src="images/hambm.svg" alt="menu"></div>
+                        <ul class="topmenuslider slick-initialized slick-slider">
+                            <div class="slick-list draggable">
+                                <div class="slick-track" style="opacity: 1; width: 90000px; transform: translate3d(0px, 0px, 0px);">
+                                    <li class="slick-slide down slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="0"><a href="indian-grocery-delivery/near-me-in-chicago-il-" title="Grocery" tabindex="0">Groceries</a></li>
+                                    <li class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1"><a href="">Food</a></li>
+                                    <li class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1"><a href="" class="active">Direct from India</a></li>
+                                    <li class="slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1"><a href="">Fashion</a></li>
+                                    <li class="slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1"><a href="">Bestseller</a></li>
+                                    <li class="slick-slide" data-slick-index="5" aria-hidden="true" tabindex="-1"><a href="">Buy it again</a></li>
+                                    <li class="slick-slide" data-slick-index="6" aria-hidden="true" tabindex="-1"><a href="">Same day delivery</a></li>
+                                    <li class="slick-slide" data-slick-index="7" aria-hidden="true" tabindex="-1"><a href="">Keep shopping for</a></li>
+                                    <li class="slick-slide" data-slick-index="8" aria-hidden="true" tabindex="-1"><a href="">Games</a></li>
+                                    <li class="slick-slide" data-slick-index="9" aria-hidden="true" tabindex="-1"><a href="">Events</a></li>
+                                    <li class="slick-slide" data-slick-index="10" aria-hidden="true" tabindex="-1"><a href="">QPay</a></li>
+                                    <li class="slick-slide" data-slick-index="11" aria-hidden="true" tabindex="-1"><a href="">Gift Card</a></li>
+                                    <li class="slick-slide" data-slick-index="12" aria-hidden="true" tabindex="-1"><a href="">Quicklly Pass</a></li>
+                                    <li class="slick-slide" data-slick-index="13" aria-hidden="true" tabindex="-1"><a href="">Refer a Friend</a></li>
+                                </div>
+                            </div>
+                        </ul>
+
+                        <div class="modal" id="sideMenuModal" style="display: none;">
+                            <div class="modal-content">
+                                <div class="user-name">
+                                <span class="u-name">Hello Sanjay</span><span class="close" onclick="closeSideMenu()"><img class="md-close" src="images/md-close.svg" alt="Close" /></span>
+                                </div>
+                                <div class="aa">
+                                    <h2>Shop by Category</h2>
+                                    <ul>
+                                        <li><a href="#">Groceries</a></li>
+                                        <li><a href="#">Food</a></li>
+                                        <li><a href="#">Nation wide</a></li>
+                                        <li><a href="#">Direct from India</a></li>
+                                        <li><a href="#">Astrology (Shubh Puja)</a></li>
+                                        <li><a href="#">Events</a></li>
+                                        <li><a href="#">Moments</a></li>
+                                        <li><a href="#">Just By Quicklly Meals</a></li>
+                                    </ul>
+                                </div>
+                                <div class="b-border"></div>
+                                <div class="aa">
+                                    <h2>Programs & Features</h2>
+                                    <ul>
+                                        <li><a href="#">QPay</a></li>
+                                        <li><a href="#">Events</a></li>
+                                        <li><a href="#">Recipe</a></li>
+                                        <li><a href="#">Quicklly Pass</a></li>
+                                        <li><a href="#">Gift Card</a></li>
+                                    </ul>
+                                </div>
+                                <div class="b-border"></div>
+                                <div class="aa">
+                                    <h2>Account & Settings</h2>
+                                    <ul>
+                                        <li><a href="#">Your Account</a></li>
+                                        <li><a href="#">Sign out</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function opensidemenu() {
+            const modal = document.getElementById('sideMenuModal');
+            modal.style.display = 'block'; 
+            setTimeout(() => {
+                modal.classList.add('active'); 
+            }, 10);
+        }
+
+        function closeSideMenu() {
+            const modal = document.getElementById('sideMenuModal');
+            modal.classList.remove('active'); 
+            setTimeout(() => {
+                modal.style.display = 'none'; 
+            }, 300);
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('sideMenuModal');
+            if (event.target === modal) {
+                closeSideMenu();
+            }
+        };
+    </script>
+
 </body>
 
 </html>

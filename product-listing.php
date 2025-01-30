@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="images/favicon.png">
 
     <style>
-       
+
     </style>
 </head>
 
@@ -121,15 +121,54 @@
                                     </div>
                                 </div>
                             </div>
-                        
-                            <div class="price-range-filter">
-                                <h4>Price Range</h4>
-                                <div class="slider-container">
-                                    <input class="range-left" type="range" id="minRange" min="10" max="1000" value="10" step="10">
-                                    <input class="range-right" type="range" id="maxRange" min="10" max="1000" value="1000" step="10">
+
+                            <!-- <div class="price-range-wrapper">
+                                <div class="price-range-filter">
+                                    <h4>Price Range</h4>
+                                </div>
+                                <div class="slider">
+                                    <div class="progress"></div>
+                                </div>
+                                <div class="range-input">
+                                    <input type="range" class="range-min" min="0" max="10000" value="10" step="100">
+                                    <input type="range" class="range-max" min="0" max="10000" value="1000" step="100">
                                 </div>
                                 <div class="price-values">
-                                    <span id="minValue">$10</span> - <span id="maxValue">$1000</span>
+                                    <span id="minValue" class="input-min">$10</span> - <span id="maxValue" class="input-max">$1000</span>
+                                </div>
+                                <div class="price-input" style="display: none;">
+                                    <div class="field">
+                                        <input type="number" class="input-min" value="10">
+                                    </div>
+                                    <div class="separator">-</div>
+                                    <div class="field">
+                                        <input type="number" class="input-max" value="1000">
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <div class="price-range-wrapper">
+                                <div class="price-range-filter">
+                                    <h4>Price Range</h4>
+                                </div>
+                                <div class="slider">
+                                    <div class="progress"></div>
+                                </div>
+                                <div class="range-input">
+                                    <input type="range" class="range-min" min="10" max="1000" value="10" step="10">
+                                    <input type="range" class="range-max" min="10" max="1000" value="1000" step="10">
+                                </div>
+                                <div class="price-values">
+                                    <span id="minValue" class="input-min">$10</span> - <span id="maxValue" class="input-max">$1000</span>
+                                </div>
+                                <div class="price-input" style="display: none;">
+                                    <div class="field">
+                                        <input type="number" class="input-min" value="10" min="10" max="1000">
+                                    </div>
+                                    <div class="separator">-</div>
+                                    <div class="field">
+                                        <input type="number" class="input-max" value="1000" min="10" max="1000">
+                                    </div>
                                 </div>
                             </div>
 
@@ -280,6 +319,9 @@
                             <div class="p-listing">
                                 <div class="row">
                                     <div class="col p-card">
+                                        <!-- <a style="background:#F7F7FA;" href="product-detail.php" class="category-item">
+                                            <img src="images/001.png" alt="" class="img-fluid">
+                                        </a> -->
                                         <a href="product-detail.php" class="category-item">
                                             <img src="images/001.png" alt="" class="img-fluid">
                                         </a>
@@ -752,45 +794,109 @@
     </div>
 
 
-    <script>
-        
-        const minRange = document.getElementById("minRange");
-        const maxRange = document.getElementById("maxRange");
-        const minValueDisplay = document.getElementById("minValue");
-        const maxValueDisplay = document.getElementById("maxValue");
+    <!-- <script>
+        const rangeInput = document.querySelectorAll(".range-input input"),
+            priceInput = document.querySelectorAll(".price-input input"),
+            range = document.querySelector(".slider .progress");
 
-        function updateSlider() {
-            let minVal = parseInt(minRange.value);
-            let maxVal = parseInt(maxRange.value);
+        let priceGap = 1000;
 
-            if (minVal >= maxVal) {
-                minRange.value = maxVal - 10;
-                minVal = parseInt(minRange.value);
+        function updatePriceValues() {
+            let minPrice = parseInt(priceInput[0].value),
+                maxPrice = parseInt(priceInput[1].value);
+
+            if ((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max) {
+                rangeInput[0].value = minPrice;
+                rangeInput[1].value = maxPrice;
+
+                range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
+                range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+
+                document.getElementById("minValue").textContent = `$${minPrice}`;
+                document.getElementById("maxValue").textContent = `$${maxPrice}`;
             }
-
-            if (maxVal <= minVal) {
-                maxRange.value = minVal + 10;
-                maxVal = parseInt(maxRange.value);
-            }
-
-            minValueDisplay.textContent = `$${minVal}`;
-            maxValueDisplay.textContent = `$${maxVal}`;
-
-            const percentMin = ((minVal - 10) / (1000 - 10)) * 100;
-            const percentMax = ((maxVal - 10) / (1000 - 10)) * 100;
-
-            const trackFill = document.querySelector(".price-range-filter .slider-container:after");
-            trackFill.style.left = `${percentMin}%`;
-            trackFill.style.right = `${100 - percentMax}%`;
         }
 
-        minRange.addEventListener("input", updateSlider);
-        maxRange.addEventListener("input", updateSlider);
+        priceInput.forEach(input => {
+            input.addEventListener("input", updatePriceValues);
+        });
 
-        updateSlider();
+        rangeInput.forEach(input => {
+            input.addEventListener("input", e => {
+                let minVal = parseInt(rangeInput[0].value),
+                    maxVal = parseInt(rangeInput[1].value);
 
+                if ((maxVal - minVal) < priceGap) {
+                    if (e.target.className === "range-min") {
+                        rangeInput[0].value = maxVal - priceGap
+                    } else {
+                        rangeInput[1].value = minVal + priceGap;
+                    }
+                } else {
+                    priceInput[0].value = minVal;
+                    priceInput[1].value = maxVal;
+                    range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
+                    range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                }
 
-    </script>
+                updatePriceValues();
+            });
+        });
+
+        updatePriceValues();
+    </script> -->
+
+    <script>
+    const rangeInput = document.querySelectorAll(".range-input input"),
+        priceInput = document.querySelectorAll(".price-input input"),
+        range = document.querySelector(".slider .progress");
+
+    let priceGap = 10; // Set the price gap to $10
+
+    function updatePriceValues() {
+        let minPrice = parseInt(priceInput[0].value),
+            maxPrice = parseInt(priceInput[1].value);
+
+        if ((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max) {
+            rangeInput[0].value = minPrice;
+            rangeInput[1].value = maxPrice;
+
+            range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
+            range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+
+            document.getElementById("minValue").textContent = `$${minPrice}`;
+            document.getElementById("maxValue").textContent = `$${maxPrice}`;
+        }
+    }
+
+    priceInput.forEach(input => {
+        input.addEventListener("input", updatePriceValues);
+    });
+
+    rangeInput.forEach(input => {
+        input.addEventListener("input", e => {
+            let minVal = parseInt(rangeInput[0].value),
+                maxVal = parseInt(rangeInput[1].value);
+
+            if ((maxVal - minVal) < priceGap) {
+                if (e.target.className === "range-min") {
+                    rangeInput[0].value = maxVal - priceGap; // Adjust min value
+                } else {
+                    rangeInput[1].value = minVal + priceGap; // Adjust max value
+                }
+            } else {
+                priceInput[0].value = minVal;
+                priceInput[1].value = maxVal;
+                range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
+                range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+            }
+
+            updatePriceValues();
+        });
+    });
+
+    updatePriceValues(); // Initial call to set values at page load
+</script>
 
 </body>
 <?php include 'footer.php'; ?>

@@ -28,7 +28,7 @@
                     <div class="row">
                     <div class="col-md-3">
                         <div class="store-logo">
-                            <img src="images/283.PNG" alt="">
+                            <img src="images/biba.png" alt="">
                                 <span class="logo-name">BIBA</span>
                         </div>
                     </div>

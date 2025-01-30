@@ -11,7 +11,7 @@
 
 <body>
 
-    <div class="header-top">
+    <!-- <div class="header-top">
         <div class="clsHead">
             <div class="container">
                 <div class="topsectionimppage">
@@ -37,23 +37,69 @@
                                 </div>
                             </div>
                         </ul>
+
+                        <div class="modal" id="sideMenuModal" style="display: none;">
+                            <div class="modal-content">
+                                <div class="user-name">
+                                <span class="u-name">Hello Sanjay</span><span class="close" onclick="closeSideMenu()">&times;</span>
+                                </div>
+                                <div class="aa">
+                                    <h2>Shop by Category</h2>
+                                    <ul>
+                                        <li><a href="#">Groceries</a></li>
+                                        <li><a href="#">Food</a></li>
+                                        <li><a href="#">Nation wide</a></li>
+                                        <li><a href="#">Direct from India</a></li>
+                                        <li><a href="#">Astrology (Shubh Puja)</a></li>
+                                        <li><a href="#">Events</a></li>
+                                        <li><a href="#">Moments</a></li>
+                                        <li><a href="#">Just By Quicklly Meals</a></li>
+                                    </ul>
+                                </div>
+                                <div class="b-border"></div>
+                                <div class="aa">
+                                    <h2>Programs & Features</h2>
+                                    <ul>
+                                        <li><a href="#">QPay</a></li>
+                                        <li><a href="#">Events</a></li>
+                                        <li><a href="#">Recipe</a></li>
+                                        <li><a href="#">Quicklly Pass</a></li>
+                                        <li><a href="#">Gift Card</a></li>
+                                    </ul>
+                                </div>
+                                <div class="b-border"></div>
+                                <div class="aa">
+                                    <h2>Account & Settings</h2>
+                                    <ul>
+                                        <li><a href="#">Your Account</a></li>
+                                        <li><a href="#">Sign out</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+
+    
 
     <div id="index-page" class="index-page">
         <div class="banner-slider">
             <div>
                 <img src="images/banner.png" alt="Banner 1">
             </div>
-            <!-- <div>
+            <div>
                 <img src="images/banner.png" alt="Banner 2">
             </div>
             <div>
                 <img src="images/banner.png" alt="Banner 3">
-            </div> -->
+            </div>
+            <div>
+                <img src="images/banner.png" alt="Banner 3">
+            </div>
         </div>
 
         <div class="category-area">
@@ -382,7 +428,7 @@
                             <div class="text-overlay">
                                 <h4>Dhirsons Jewellers</h4>
                                 <p>Lorem ipsum dolor sit amet, consetetur.</p>
-                                <button>Shop Now</button>
+                                <a href="store.php">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -392,7 +438,7 @@
                             <div class="text-overlay">
                                 <h4>Dhirsons Jewellers</h4>
                                 <p>Lorem ipsum dolor sit amet, consetetur.</p>
-                                <button>Shop Now</button>
+                                <a href="store.php">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -402,7 +448,7 @@
                             <div class="text-overlay">
                                 <h4>Aquazzura</h4>
                                 <p>Lorem ipsum dolor sit amet, consetetur.</p><br>
-                                <button>Shop Now</button>
+                                <a href="store.php">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -829,7 +875,7 @@
                                 <div class="text-overlay">
                                     <h4>Dhirsons Jewellers</h4>
                                     <p>Lorem ipsum dolor sit amet, consetetur.</p>
-                                    <button>Shop Now</button>
+                                    <a href="store.php">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -839,7 +885,7 @@
                                 <div class="text-overlay">
                                     <h4>Dhirsons Jewellers</h4>
                                     <p>Lorem ipsum dolor sit amet, consetetur.</p>
-                                    <button>Shop Now</button>
+                                    <a href="store.php">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -849,7 +895,7 @@
                                 <div class="text-overlay">
                                     <h4>Aquazzura</h4>
                                     <p>Lorem ipsum dolor sit amet, consetetur.</p><br>
-                                    <button>Shop Now</button>
+                                    <a href="store.php">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -1011,7 +1057,7 @@
                 speed: 500,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                autoplay: true,
+                autoplay: false,
                 autoplaySpeed: 3000,
                 arrows: false,
             });
@@ -1196,6 +1242,31 @@
             });
         });
     </script>
+
+    <!-- <script>
+        function opensidemenu() {
+            const modal = document.getElementById('sideMenuModal');
+            modal.style.display = 'block'; 
+            setTimeout(() => {
+                modal.classList.add('active'); 
+            }, 10);
+        }
+
+        function closeSideMenu() {
+            const modal = document.getElementById('sideMenuModal');
+            modal.classList.remove('active'); 
+            setTimeout(() => {
+                modal.style.display = 'none'; 
+            }, 300);
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('sideMenuModal');
+            if (event.target === modal) {
+                closeSideMenu();
+            }
+        };
+    </script> -->
 
 
 </body>

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <?php include 'header-old.php'; ?>
+    <?php include 'header.php'; ?>
     <link rel="shortcut icon" href="images/favicon.png">
 
     <style>
