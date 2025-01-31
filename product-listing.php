@@ -322,7 +322,7 @@
                                         <!-- <a style="background:#F7F7FA;" href="product-detail.php" class="category-item">
                                             <img src="images/001.png" alt="" class="img-fluid">
                                         </a> -->
-                                        <a href="product-detail.php" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/001.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -346,7 +346,7 @@
 
                                     </div>
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/002.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -368,7 +368,7 @@
                                         </div>
                                     </div>
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/003.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -390,7 +390,7 @@
                                         </div>
                                     </div>
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/004.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -414,7 +414,7 @@
 
                                     </div>
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/005.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -438,7 +438,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/006.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -462,7 +462,7 @@
 
                                     </div>
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/007.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -484,7 +484,7 @@
                                         </div>
                                     </div>
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/008.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -506,7 +506,7 @@
                                         </div>
                                     </div>
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/009.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -530,7 +530,7 @@
 
                                     </div>
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/010.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -554,7 +554,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/011.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -578,7 +578,7 @@
 
                                     </div>
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/012.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -600,7 +600,7 @@
                                         </div>
                                     </div>
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/013.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -622,7 +622,7 @@
                                         </div>
                                     </div>
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/014.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -646,7 +646,7 @@
 
                                     </div>
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/015.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -670,7 +670,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/016.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -694,29 +694,7 @@
 
                                     </div>
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
-                                            <img src="images/014.png" alt="" class="img-fluid">
-                                        </a>
-                                        <div class="list-desc">
-                                            <p class="p-cat">Thomas Scott</p>
-                                            <p class="p-name">Men Kurta Pyjama</p>
-                                            <span class="stars">
-                                                <img src="images/star.svg" alt="" class="aa">
-                                                <img src="images/star.svg" alt="" class="aa">
-                                                <img src="images/star.svg" alt="" class="aa">
-                                                <img src="images/star.svg" alt="" class="aa">
-                                                <img src="images/star.svg" alt="" class="aa">
-                                                <img src="images/drop.svg" alt="" class="bb">
-                                                <span class="star-num">11</span>
-                                            </span>
-                                            <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
-                                        </div>
-                                        <div class="offer">
-                                            <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/017.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
@@ -738,8 +716,30 @@
                                         </div>
                                     </div>
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
+                                        <a href="cart.php" class="category-item">
                                             <img src="images/018.png" alt="" class="img-fluid">
+                                        </a>
+                                        <div class="list-desc">
+                                            <p class="p-cat">Thomas Scott</p>
+                                            <p class="p-name">Men Kurta Pyjama</p>
+                                            <span class="stars">
+                                                <img src="images/star.svg" alt="" class="aa">
+                                                <img src="images/star.svg" alt="" class="aa">
+                                                <img src="images/star.svg" alt="" class="aa">
+                                                <img src="images/star.svg" alt="" class="aa">
+                                                <img src="images/star.svg" alt="" class="aa">
+                                                <img src="images/drop.svg" alt="" class="bb">
+                                                <span class="star-num">11</span>
+                                            </span>
+                                            <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                        </div>
+                                        <div class="offer">
+                                            <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                        </div>
+                                    </div>
+                                    <div class="col p-card">
+                                        <a href="cart.php" class="category-item">
+                                            <img src="images/019.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
                                             <p class="p-cat">Thomas Scott</p>
@@ -762,8 +762,8 @@
 
                                     </div>
                                     <div class="col p-card">
-                                        <a href="" class="category-item">
-                                            <img src="images/019.png" alt="" class="img-fluid">
+                                        <a href="cart.php" class="category-item">
+                                            <img src="images/020.png" alt="" class="img-fluid">
                                         </a>
                                         <div class="list-desc">
                                             <p class="p-cat">Thomas Scott</p>
@@ -784,6 +784,496 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- <div class="grid-container">
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="cart.php" class="category-item">
+                                                <img src="images/016.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                            <div class="buy-offer">Buy 2 items and save extra $10</div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/017.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/018.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/019.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                            <div class="buy-offer">Buy 2 items and save extra $10</div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/020.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/016.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                            <div class="buy-offer">Buy 2 items and save extra $10</div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/017.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/018.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/019.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                            <div class="buy-offer">Buy 2 items and save extra $10</div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/020.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/016.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                            <div class="buy-offer">Buy 2 items and save extra $10</div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/017.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/018.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/019.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                            <div class="buy-offer">Buy 2 items and save extra $10</div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/020.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/016.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                            <div class="buy-offer">Buy 2 items and save extra $10</div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/017.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/018.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/019.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                            <div class="buy-offer">Buy 2 items and save extra $10</div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item p-card">
+                                        <div class="image-container">
+                                            <a href="" class="category-item">
+                                                <img src="images/020.png" alt="" class="img-fluid">
+                                            </a>
+                                            <div class="list-desc">
+                                                <p class="p-cat">Thomas Scott</p>
+                                                <p class="p-name">Men Kurta Pyjama</p>
+                                                <span class="stars">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/star.svg" alt="" class="aa">
+                                                    <img src="images/drop.svg" alt="" class="bb">
+                                                    <span class="star-num">11</span>
+                                                </span>
+                                                <p class="p-size"><span class="size-tx">Size: </span><span class="size">S, M, L, XL, 2XL, 3XL</span></p>
+                                            </div>
+                                            <div class="offer">
+                                                <span class="percent">20% off</span> <span class="real-price">$15.00</span> <span class="cut-price">$25.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -847,56 +1337,56 @@
     </script> -->
 
     <script>
-    const rangeInput = document.querySelectorAll(".range-input input"),
-        priceInput = document.querySelectorAll(".price-input input"),
-        range = document.querySelector(".slider .progress");
+        const rangeInput = document.querySelectorAll(".range-input input"),
+            priceInput = document.querySelectorAll(".price-input input"),
+            range = document.querySelector(".slider .progress");
 
-    let priceGap = 10; // Set the price gap to $10
+        let priceGap = 10; // Set the price gap to $10
 
-    function updatePriceValues() {
-        let minPrice = parseInt(priceInput[0].value),
-            maxPrice = parseInt(priceInput[1].value);
+        function updatePriceValues() {
+            let minPrice = parseInt(priceInput[0].value),
+                maxPrice = parseInt(priceInput[1].value);
 
-        if ((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max) {
-            rangeInput[0].value = minPrice;
-            rangeInput[1].value = maxPrice;
+            if ((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max) {
+                rangeInput[0].value = minPrice;
+                rangeInput[1].value = maxPrice;
 
-            range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
-            range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+                range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
+                range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
 
-            document.getElementById("minValue").textContent = `$${minPrice}`;
-            document.getElementById("maxValue").textContent = `$${maxPrice}`;
-        }
-    }
-
-    priceInput.forEach(input => {
-        input.addEventListener("input", updatePriceValues);
-    });
-
-    rangeInput.forEach(input => {
-        input.addEventListener("input", e => {
-            let minVal = parseInt(rangeInput[0].value),
-                maxVal = parseInt(rangeInput[1].value);
-
-            if ((maxVal - minVal) < priceGap) {
-                if (e.target.className === "range-min") {
-                    rangeInput[0].value = maxVal - priceGap; // Adjust min value
-                } else {
-                    rangeInput[1].value = minVal + priceGap; // Adjust max value
-                }
-            } else {
-                priceInput[0].value = minVal;
-                priceInput[1].value = maxVal;
-                range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
-                range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                document.getElementById("minValue").textContent = `$${minPrice}`;
+                document.getElementById("maxValue").textContent = `$${maxPrice}`;
             }
+        }
 
-            updatePriceValues();
+        priceInput.forEach(input => {
+            input.addEventListener("input", updatePriceValues);
         });
-    });
 
-    updatePriceValues(); // Initial call to set values at page load
-</script>
+        rangeInput.forEach(input => {
+            input.addEventListener("input", e => {
+                let minVal = parseInt(rangeInput[0].value),
+                    maxVal = parseInt(rangeInput[1].value);
+
+                if ((maxVal - minVal) < priceGap) {
+                    if (e.target.className === "range-min") {
+                        rangeInput[0].value = maxVal - priceGap; // Adjust min value
+                    } else {
+                        rangeInput[1].value = minVal + priceGap; // Adjust max value
+                    }
+                } else {
+                    priceInput[0].value = minVal;
+                    priceInput[1].value = maxVal;
+                    range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
+                    range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                }
+
+                updatePriceValues();
+            });
+        });
+
+        updatePriceValues(); // Initial call to set values at page load
+    </script>
 
 </body>
 <?php include 'footer.php'; ?>

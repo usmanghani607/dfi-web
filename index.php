@@ -177,19 +177,27 @@
                             </div>
                             <div class="row category-grid">
                                 <div class="col-md-6">
-                                    <img src="images/men-1.png" alt="">
+                                    <a href="product-listing.php" class="category-item">
+                                        <img src="images/men-1.png" alt="" class="img-fluid">
+                                    </a>
                                     <p>Organic Peanuts 4 LB</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="images/men-2.png" alt="">
+                                    <a href="product-listing.php" class="category-item">
+                                        <img src="images/men-2.png" alt="" class="img-fluid">
+                                    </a>
                                     <p>Classic Polo</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="images/men-3.png" alt="">
+                                    <a href="product-listing.php" class="category-item">
+                                        <img src="images/men-3.png" alt="" class="img-fluid">
+                                    </a>
                                     <p>Casula Shirts</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="images/men-4.png" alt="">
+                                    <a href="product-listing.php" class="category-item">
+                                        <img src="images/men-4.png" alt="" class="img-fluid">
+                                    </a>
                                     <p>Jeans</p>
                                 </div>
                             </div>
@@ -203,19 +211,27 @@
                             </div>
                             <div class="row category-grid">
                                 <div class="col-md-6">
-                                    <img src="images/jel-1.png" alt="">
+                                    <a href="product-listing.php" class="category-item">
+                                        <img src="images/jel-1.png" alt="" class="img-fluid">
+                                    </a>
                                     <p>Name</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="images/jel-2.png" alt="">
+                                    <a href="product-listing.php" class="category-item">
+                                        <img src="images/jel-2.png" alt="" class="img-fluid">
+                                    </a>
                                     <p>Name</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="images/jel-3.png" alt="">
+                                    <a href="product-listing.php" class="category-item">
+                                        <img src="images/jel-3.png" alt="" class="img-fluid">
+                                    </a>
                                     <p>Name</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="images/jel-4.png" alt="">
+                                    <a href="product-listing.php" class="category-item">
+                                        <img src="images/jel-4.png" alt="" class="img-fluid">
+                                    </a>
                                     <p>Name</p>
                                 </div>
                             </div>
@@ -229,19 +245,27 @@
                             </div>
                             <div class="row category-grid">
                                 <div class="col-md-6">
-                                    <img src="images/women-1.png" alt="">
+                                    <a href="product-listing.php" class="category-item">
+                                        <img src="images/women-1.png" alt="" class="img-fluid">
+                                    </a>
                                     <p>Name</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="images/women-2.png" alt="">
+                                    <a href="product-listing.php" class="category-item">
+                                        <img src="images/women-2.png" alt="" class="img-fluid">
+                                    </a>
                                     <p>Name</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="images/women-3.png" alt="">
+                                    <a href="product-listing.php" class="category-item">
+                                        <img src="images/women-3.png" alt="" class="img-fluid">
+                                    </a>
                                     <p>Name</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="images/women-4.png" alt="">
+                                    <a href="product-listing.php" class="category-item">
+                                        <img src="images/women-4.png" alt="" class="img-fluid">
+                                    </a>
                                     <p>Name</p>
                                 </div>
                             </div>
@@ -327,54 +351,54 @@
                         <div class="brand-outer">
                             <div class="brand-heading">
                                 <span class="heading-left">Best Fashion Brands for you</span>
-                                <span class="view-right"><a href="#">View all</a></span>
+                                <span class="view-right"><a href="product-listing.php">View all</a></span>
                             </div>
                             <div class="brand-slider">
                                 <div class="brand-slick-slider">
                                     <div class="grid-item">
-                                        <a href="#" class="category-item">
+                                        <a href="product-listing.php" class="category-item">
                                             <img src="images/brand-1.png" alt="" class="img-fluid">
                                             <p>M7 Sports, T90…</p>
                                             <h6>From $20</h6>
                                         </a>
                                     </div>
                                     <div class="grid-item">
-                                        <a href="#" class="category-item">
+                                        <a href="product-listing.php" class="category-item">
                                             <img src="images/brand-2.png" alt="" class="img-fluid">
                                             <p>Nike, Skechers…</p>
                                             <h6>From $20</h6>
                                         </a>
                                     </div>
                                     <div class="grid-item">
-                                        <a href="#" class="category-item">
+                                        <a href="product-listing.php" class="category-item">
                                             <img src="images/brand-3.png" alt="" class="img-fluid">
                                             <p>Antique mobile pouches</p>
                                             <h6>From $5</h6>
                                         </a>
                                     </div>
                                     <div class="grid-item">
-                                        <a href="#" class="category-item">
+                                        <a href="product-listing.php" class="category-item">
                                             <img src="images/brand-4.png" alt="" class="img-fluid">
                                             <p>Branded Kurtas</p>
                                             <h6>From $20</h6>
                                         </a>
                                     </div>
                                     <div class="grid-item">
-                                        <a href="#" class="category-item">
+                                        <a href="product-listing.php" class="category-item">
                                             <img src="images/brand-5.png" alt="" class="img-fluid">
                                             <p>Pants, Palazzos…</p>
                                             <h6>From $20</h6>
                                         </a>
                                     </div>
                                     <div class="grid-item">
-                                        <a href="#" class="category-item">
+                                        <a href="product-listing.php" class="category-item">
                                             <img src="images/brand-6.png" alt="" class="img-fluid">
                                             <p>Women’s Sandals…</p>
                                             <h6>From $20</h6>
                                         </a>
                                     </div>
                                     <div class="grid-item">
-                                        <a href="#" class="category-item">
+                                        <a href="product-listing.php" class="category-item">
                                             <img src="images/brand-1.png" alt="" class="img-fluid">
                                             <p>Scandals</p>
                                             <h6>From $20</h6>
@@ -598,7 +622,8 @@
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="pro-card">
-                            <img src="images/product-1.png" alt="">
+                            <a href="store.php" class="category-item">
+                            <img src="images/product-1.png" alt="" class="img-fluid">
                             <!-- <span>Home Decor</span> -->
                             <div class="storenamewrap">
                                 <div class="storename">Home Decor </div>
@@ -607,77 +632,88 @@
                                         <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
                                 </div>
                             </div>
-                            <p><a href="">View all products</a></p>
+                            <p><a href="store.php">View all products</a></p>
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="pro-card">
-                            <img src="images/product-2.png" alt="">
-                            <!-- <span>Home Decor</span> -->
-                            <div class="storenamewrap">
-                                <div class="storename">Perquisite Luggage Bags</div>
-                                <div class="deliverywrap">
-                                    <span class="showratingst">
-                                        <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
+                            <a href="store.php" class="category-item">
+                                <img src="images/product-2.png" alt="" class="img-fluid">
+                                <!-- <span>Home Decor</span> -->
+                                <div class="storenamewrap">
+                                    <div class="storename">Perquisite Luggage Bags</div>
+                                    <div class="deliverywrap">
+                                        <span class="showratingst">
+                                            <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <p><a href="">View all products</a></p>
+                                <p><a href="store.php">View all products</a></p>
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="pro-card">
-                            <img src="images/product-3.png" alt="">
-                            <!-- <span>Home Decor</span> -->
-                            <div class="storenamewrap">
-                                <div class="storename">Juplay Toys & more</div>
-                                <div class="deliverywrap">
-                                    <span class="showratingst">
-                                        <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
+                            <a href="store.php" class="category-item">
+                                <img src="images/product-3.png" alt="" class="img-fluid">
+                                <!-- <span>Home Decor</span> -->
+                                <div class="storenamewrap">
+                                    <div class="storename">Juplay Toys & more</div>
+                                    <div class="deliverywrap">
+                                        <span class="showratingst">
+                                            <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <p><a href="">View all products</a></p>
+                                <p><a href="store.php">View all products</a></p>
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="pro-card">
-                            <img src="images/product-4.png" alt="">
-                            <!-- <span>Home Decor</span> -->
-                            <div class="storenamewrap">
-                                <div class="storename">zari banaras</div>
-                                <div class="deliverywrap">
-                                    <span class="showratingst">
-                                        <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
+                            <a href="store.php" class="category-item">
+                                <img src="images/product-4.png" alt="" class="img-fluid">
+                                <!-- <span>Home Decor</span> -->
+                                <div class="storenamewrap">
+                                    <div class="storename">zari banaras</div>
+                                    <div class="deliverywrap">
+                                        <span class="showratingst">
+                                            <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <p><a href="">View all products</a></p>
+                                <p><a href="store.php">View all products</a></p>
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="pro-card">
-                            <img src="images/product-5.png" alt="">
-                            <!-- <span>Home Decor</span> -->
-                            <div class="storenamewrap">
-                                <div class="storename">Mala Singh</div>
-                                <div class="deliverywrap">
-                                    <span class="showratingst">
-                                        <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
+                            <a href="store.php" class="category-item">
+                                <img src="images/product-5.png" alt="" class="img-fluid">
+                                <!-- <span>Home Decor</span> -->
+                                <div class="storenamewrap">
+                                    <div class="storename">Mala Singh</div>
+                                    <div class="deliverywrap">
+                                        <span class="showratingst">
+                                            <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <p><a href="">View all products</a></p>
+                                <p><a href="store.php">View all products</a></p>
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="pro-card">
-                            <img src="images/product-6.png" alt="">
-                            <!-- <span>Home Decor</span> -->
-                            <div class="storenamewrap">
-                                <div class="storename">Monrow</div>
-                                <div class="deliverywrap">
-                                    <span class="showratingst">
-                                        <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
+                            <a href="store.php" class="category-item">
+                                <img src="images/product-6.png" alt="" class="img-fluid">
+                                <!-- <span>Home Decor</span> -->
+                                <div class="storenamewrap">
+                                    <div class="storename">Monrow</div>
+                                    <div class="deliverywrap">
+                                        <span class="showratingst">
+                                            <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <p><a href="">View all products</a></p>
+                                <p><a href="store.php">View all products</a></p>
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -226,7 +226,7 @@
                             <div class="row">
                                 <div class="col p-card">
                                     <a href="" class="category-item">
-                                        <img src="images/kurta-6.png" alt="" class="img-fluid">
+                                        <img src="images/kurta-15.png" alt="" class="img-fluid">
                                     </a>
                                     <div class="list-desc">
                                         <p class="p-cat">Thomas Scott</p>

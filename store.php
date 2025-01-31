@@ -121,12 +121,12 @@
                     <div class="collection-img">
                         <div class="row">
                             <div class="col-md-6">
-                                <a href="" class="category-item">
+                                <a href="store-listing.php" class="category-item">
                                     <img src="images/nazaqat.png" alt="" class="img-fluid">
                                 </a>
                             </div>
                             <div class="col-md-6">
-                                <a href="" class="category-item">
+                                <a href="store-listing.php" class="category-item">
                                     <img src="images/bahaar.png" alt="" class="img-fluid">
                                 </a>
                             </div>
@@ -135,17 +135,17 @@
                     <div class="collection-grid">
                         <div class="row">
                             <div class="col-md-6">
-                                <a href="" class="category-item">
+                                <a href="store-listing.php" class="category-item">
                                     <img src="images/sukoon.png" alt="" class="img-fluid">
                                 </a>
                             </div>
                             <div class="col-md-3">
-                                <a href="" class="category-item">
+                                <a href="store-listing.php" class="category-item">
                                     <img src="images/gul.png" alt="" class="img-fluid">
                                 </a>
                             </div>
                             <div class="col-md-3">
-                                <a href="" class="category-item">
+                                <a href="store-listing.php" class="category-item">
                                     <img src="images/co-ordsome.png" alt="" class="img-fluid">
                                 </a>
                             </div>
@@ -154,7 +154,7 @@
                     <div class="collection-summer">
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="" class="category-item">
+                                <a href="store-listing.php" class="category-item">
                                     <img src="images/summer-dress.png" alt="" class="img-fluid">
                                 </a>
                             </div>

@@ -45,7 +45,7 @@
     </div> -->
     <header class="clsInnerHeader">
 
-        <a href="https://www.dev.goquicklly.com/" title="Quicklly.com" class="clsLogo">
+        <a href="https://dev.goquicklly.com/dfi/" title="Quicklly.com" class="clsLogo">
             <img src="images/quicly-logo-black.png" alt="Quicklly - Indian Groceries, Food &amp; More">
         </a>
 
