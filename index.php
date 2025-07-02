@@ -7,404 +7,473 @@
 
     <style>
     </style>
+
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            function getCookie(name) {
+                const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+                return match ? match[2] : null;
+            }
+
+            function bindAddToCart(buttonWrapper) {
+                buttonWrapper.innerHTML = `
+                    <a href="" class="add-btn">
+                        <div class="add-cart-btn original-padding">Add to Cart</div>
+                    </a>
+                `;
+                const newAddBtn = buttonWrapper.querySelector(".add-btn");
+                newAddBtn.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    showQuantityControl(buttonWrapper);
+                });
+            }
+
+            function showQuantityControl(buttonWrapper) {
+                buttonWrapper.innerHTML = `
+                    <div class="add-cart-btn compact-padding">
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">−</button>
+                            <span class="qty-value">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                `;
+
+                const minus = buttonWrapper.querySelector(".minus");
+                const plus = buttonWrapper.querySelector(".plus");
+                const value = buttonWrapper.querySelector(".qty-value");
+
+                minus.addEventListener("click", function() {
+                    let qty = parseInt(value.textContent);
+                    if (qty > 1) {
+                        value.textContent = qty - 1;
+                    } else {
+                        bindAddToCart(buttonWrapper);
+                    }
+                });
+
+                plus.addEventListener("click", function() {
+                    let qty = parseInt(value.textContent);
+                    value.textContent = qty + 1;
+                });
+            }
+
+
+            const zipcode = getCookie('zipcode') || '60611';
+
+            fetch("https://devrestapi.goquicklly.com/only-luxury/get-home-data", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        zipcode
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.success) return;
+
+                    if (loader) loader.style.display = "none";
+
+                    const bannerUrl = window.innerWidth <= 768 ? data.bannerMobile : data.bannerDesktop;
+                    const bannerImg = document.getElementById("dynamicBanner");
+                    if (bannerImg) {
+                        bannerImg.onload = function() {
+                            bannerImg.style.display = "block";
+                        };
+                        bannerImg.src = bannerUrl;
+                    }
+
+                    function renderProductList(list, containerId) {
+                        const container = document.getElementById(containerId);
+                        if (!container) return;
+                        container.innerHTML = "";
+
+                        list.forEach(prod => {
+                            const imgSrc = prod.photos?.[0]?.photo || "images/default.png";
+                            const name = prod.productName || "";
+                            const slug = prod.productSlug || "#";
+                            const price = prod.lstSizes?.[0]?.salePrice || "";
+                            const mrp = prod.lstSizes?.[0]?.mrpPrice || "";
+                            const discount = prod.lstSizes?.[0]?.discount || "";
+
+                            const html = `
+                            <div class="col-md-3">
+                                <div class="cart">
+                                    <div class="image-wrap">
+                                        <a href="/only-luxury/prod-details/${prod.productID}">
+                                            <img src="${imgSrc}" alt="${name}">
+                                            <span class="discount-badge">${discount}</span>
+                                        </a>
+                                    </div>
+                                    <p class="prod-name">${name}</p>
+                                    <div class="desc">
+                                        <p>
+                                            <span class="dis-price">$${price}</span>
+                                            <span class="original-price">$${mrp}</span>
+                                        </p>
+                                    </div>
+                                    <div class="add-cart-container">
+                                        <a href="" class="add-btn">
+                                            <div class="add-cart-btn">Add to Cart</div>
+                                        </a>
+                                    </div>
+                                    <div class="view-p">
+                                        <a href="/only-luxury/prod-details/${prod.productID}">View Product</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                            container.insertAdjacentHTML("beforeend", html);
+                        });
+
+                        document.querySelectorAll(`#${containerId} .add-cart-container`).forEach(container => {
+                            const addBtn = container.querySelector(".add-btn");
+                            if (addBtn) {
+                                addBtn.addEventListener("click", function(e) {
+                                    e.preventDefault();
+                                    showQuantityControl(container);
+                                });
+                            }
+                        });
+                    }
+
+                    if (data.lstProdTrendingStyle) {
+                        document.getElementById("trendingTitle").textContent = data.lstProdTrendingStyle.title;
+                        document.getElementById("trendingSubTitle").textContent = data.lstProdTrendingStyle.subTitle;
+                        renderProductList(data.lstProdTrendingStyle.lstProds, "productList");
+                    }
+
+                    if (data.lstProdStyleSeasons) {
+                        document.getElementById("styleSeasonsTitle").textContent = data.lstProdStyleSeasons.title;
+                        document.getElementById("styleSeasonsSubtitle").textContent = data.lstProdStyleSeasons.subTitle;
+                        renderProductList(data.lstProdStyleSeasons.lstProds, "styleSeasonList");
+                    }
+
+                    if (data.lstSlider && Array.isArray(data.lstSlider)) {
+                        const sliderContainer = document.getElementById("dynamicSlider");
+                        if (!sliderContainer) return;
+
+                        sliderContainer.innerHTML = "";
+                        data.lstSlider.forEach(prod => {
+                            const imgSrc = prod.photos?.[0]?.photo || "images/default.png";
+                            const name = prod.productName || "";
+                            const salePrice = prod.lstSizes?.[0]?.salePrice || "";
+                            const mrp = prod.lstSizes?.[0]?.mrpPrice || "";
+                            const discount = prod.lstSizes?.[0]?.discount || "";
+
+                            const slideHTML = `
+                            <div class="cart">
+                                <div class="image-wrap">
+                                    <a href="prod-listing">
+                                        <img src="${imgSrc}" alt="${name}">
+                                        <span class="discount-badge">${discount}</span>
+                                    </a>
+                                </div>
+                                <p class="prod-name">${name}</p>
+                                <div class="desc">
+                                    <p>
+                                        <span class="dis-price">$${salePrice}</span>
+                                        <span class="original-price">$${mrp}</span>
+                                    </p>
+                                </div>
+                                <div class="add-cart-container">
+                                    <a href="" class="add-btn">
+                                        <div class="add-cart-btn">Add to Cart</div>
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                            sliderContainer.insertAdjacentHTML("beforeend", slideHTML);
+                        });
+
+                        document.querySelectorAll("#dynamicSlider .add-cart-container").forEach(container => {
+                            const addBtn = container.querySelector(".add-btn");
+                            if (addBtn) {
+                                addBtn.addEventListener("click", function(e) {
+                                    e.preventDefault();
+                                    showQuantityControl(container);
+                                });
+                            }
+                        });
+
+                        $('#dynamicSlider').slick({
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: true,
+                            prevArrow: '<button class="nav-btn left-btn">Previous</button>',
+                            nextArrow: '<button class="nav-btn right-btn">Next</button>',
+                            infinite: true,
+                            responsive: [{
+                                    breakpoint: 992,
+                                    settings: {
+                                        slidesToShow: 2
+                                    }
+                                },
+                                {
+                                    breakpoint: 576,
+                                    settings: {
+                                        slidesToShow: 1
+                                    }
+                                }
+                            ]
+                        });
+                    }
+
+                })
+                .catch(error => {
+                    console.error("Data fetch error:", error);
+                    if (loader) loader.style.display = "none";
+                });
+        });
+    </script> -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            function getCookie(name) {
+                const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+                return match ? match[2] : null;
+            }
+
+            function bindAddToCart(buttonWrapper, maxQty) {
+                buttonWrapper.innerHTML = `
+                    <a href="" class="add-btn">
+                        <div class="add-cart-btn original-padding">Add to Cart</div>
+                    </a>
+                `;
+                const newAddBtn = buttonWrapper.querySelector(".add-btn");
+                newAddBtn.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    showQuantityControl(buttonWrapper, maxQty);
+                });
+            }
+
+            function showQuantityControl(buttonWrapper, maxQty = 10) {
+                buttonWrapper.innerHTML = `
+                    <div class="add-cart-btn compact-padding">
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">−</button>
+                            <span class="qty-value">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                `;
+
+                const minus = buttonWrapper.querySelector(".minus");
+                const plus = buttonWrapper.querySelector(".plus");
+                const value = buttonWrapper.querySelector(".qty-value");
+
+                minus.addEventListener("click", function() {
+                    let qty = parseInt(value.textContent);
+                    if (qty > 1) {
+                        value.textContent = qty - 1;
+                    } else {
+                        bindAddToCart(buttonWrapper, maxQty);
+                    }
+                });
+
+                plus.addEventListener("click", function() {
+                    let qty = parseInt(value.textContent);
+                    if (qty < maxQty) {
+                        value.textContent = qty + 1;
+                    }
+                });
+            }
+
+            const zipcode = getCookie('zipcode') || '60611';
+
+            fetch("https://devrestapi.goquicklly.com/only-luxury/get-home-data", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ zipcode })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (!data.success) return;
+
+                if (loader) loader.style.display = "none";
+
+                const bannerUrl = window.innerWidth <= 768 ? data.bannerMobile : data.bannerDesktop;
+                const bannerImg = document.getElementById("dynamicBanner");
+                if (bannerImg) {
+                    bannerImg.onload = function() {
+                        bannerImg.style.display = "block";
+                    };
+                    bannerImg.src = bannerUrl;
+                }
+
+                function renderProductList(list, containerId) {
+                    const container = document.getElementById(containerId);
+                    if (!container) return;
+                    container.innerHTML = "";
+
+                    list.forEach(prod => {
+                        const imgSrc = prod.photos?.[0]?.photo || "images/default.png";
+                        const name = prod.productName || "";
+                        const slug = prod.productSlug || "#";
+                        const price = prod.lstSizes?.[0]?.salePrice || "";
+                        const mrp = prod.lstSizes?.[0]?.mrpPrice || "";
+                        const discount = prod.lstSizes?.[0]?.discount || "";
+                        const inventoryQty = parseInt(prod.lstSizes?.[0]?.inventoryQuantity || 10);
+
+                        const html = `
+                        <div class="col-md-3">
+                            <div class="cart">
+                                <div class="image-wrap">
+                                    <a href="/only-luxury/prod-details/${prod.productID}">
+                                        <img src="${imgSrc}" alt="${name}">
+                                        <span class="discount-badge">${discount}</span>
+                                    </a>
+                                </div>
+                                <p class="prod-name">${name}</p>
+                                <div class="desc">
+                                    <p>
+                                        <span class="dis-price">$${price}</span>
+                                        <span class="original-price">$${mrp}</span>
+                                    </p>
+                                </div>
+                                <div class="add-cart-container"></div>
+                                <div class="view-p">
+                                    <a href="/only-luxury/prod-details/${prod.productID}">View Product</a>
+                                </div>
+                            </div>
+                        </div>
+                        `;
+                        container.insertAdjacentHTML("beforeend", html);
+
+                        const btnWrapper = container.lastElementChild.querySelector(".add-cart-container");
+                        bindAddToCart(btnWrapper, inventoryQty);
+                    });
+                }
+
+                if (data.lstProdTrendingStyle) {
+                    document.getElementById("trendingTitle").textContent = data.lstProdTrendingStyle.title;
+                    document.getElementById("trendingSubTitle").textContent = data.lstProdTrendingStyle.subTitle;
+                    renderProductList(data.lstProdTrendingStyle.lstProds, "productList");
+                }
+
+                if (data.lstProdStyleSeasons) {
+                    document.getElementById("styleSeasonsTitle").textContent = data.lstProdStyleSeasons.title;
+                    document.getElementById("styleSeasonsSubtitle").textContent = data.lstProdStyleSeasons.subTitle;
+                    renderProductList(data.lstProdStyleSeasons.lstProds, "styleSeasonList");
+                }
+
+                if (data.lstSlider && Array.isArray(data.lstSlider)) {
+                    const sliderContainer = document.getElementById("dynamicSlider");
+                    if (!sliderContainer) return;
+
+                    sliderContainer.innerHTML = "";
+                    data.lstSlider.forEach(prod => {
+                        const imgSrc = prod.photos?.[0]?.photo || "images/default.png";
+                        const name = prod.productName || "";
+                        const salePrice = prod.lstSizes?.[0]?.salePrice || "";
+                        const mrp = prod.lstSizes?.[0]?.mrpPrice || "";
+                        const discount = prod.lstSizes?.[0]?.discount || "";
+                        const inventoryQty = parseInt(prod.lstSizes?.[0]?.inventoryQuantity || 10);
+
+                        const slideHTML = `
+                        <div class="cart">
+                            <div class="image-wrap">
+                                <a href="/only-luxury/prod-details/${prod.productID}">
+                                    <img src="${imgSrc}" alt="${name}">
+                                    <span class="discount-badge">${discount}</span>
+                                </a>
+                            </div>
+                            <p class="prod-name">${name}</p>
+                            <div class="desc">
+                                <p>
+                                    <span class="dis-price">$${salePrice}</span>
+                                    <span class="original-price">$${mrp}</span>
+                                </p>
+                            </div>
+                            <div class="add-cart-container"></div>
+                        </div>
+                        `;
+                        sliderContainer.insertAdjacentHTML("beforeend", slideHTML);
+
+                        const btnWrapper = sliderContainer.lastElementChild.querySelector(".add-cart-container");
+                        bindAddToCart(btnWrapper, inventoryQty);
+                    });
+
+                    $('#dynamicSlider').slick({
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: true,
+                        prevArrow: '<button class="nav-btn left-btn">Previous</button>',
+                        nextArrow: '<button class="nav-btn right-btn">Next</button>',
+                        infinite: true,
+                        responsive: [
+                            { breakpoint: 992, settings: { slidesToShow: 2 }},
+                            { breakpoint: 576, settings: { slidesToShow: 1 }}
+                        ]
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Data fetch error:", error);
+                if (loader) loader.style.display = "none";
+            });
+        });
+    </script>
+
+
 </head>
 
 <body>
 
-    <!-- <div class="header-top">
-        <div class="clsHead">
-            <div class="container">
-                <div class="topsectionimppage">
-                    <div class="clsPgWidth clsBreadcrumb">
-                        <div class="tophumbmmm" onclick="opensidemenu();"><img src="images/hambm.svg" alt="menu"></div>
-                        <ul class="topmenuslider slick-initialized slick-slider">
-                            <div class="slick-list draggable">
-                                <div class="slick-track" style="opacity: 1; width: 90000px; transform: translate3d(0px, 0px, 0px);">
-                                    <li class="slick-slide down slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="0"><a href="indian-grocery-delivery/near-me-in-chicago-il-" title="Grocery" tabindex="0">Groceries</a></li>
-                                    <li class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1"><a href="">Food</a></li>
-                                    <li class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1"><a href="" class="active">Direct from India</a></li>
-                                    <li class="slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1"><a href="">Fashion</a></li>
-                                    <li class="slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1"><a href="">Bestseller</a></li>
-                                    <li class="slick-slide" data-slick-index="5" aria-hidden="true" tabindex="-1"><a href="">Buy it again</a></li>
-                                    <li class="slick-slide" data-slick-index="6" aria-hidden="true" tabindex="-1"><a href="">Same day delivery</a></li>
-                                    <li class="slick-slide" data-slick-index="7" aria-hidden="true" tabindex="-1"><a href="">Keep shopping for</a></li>
-                                    <li class="slick-slide" data-slick-index="8" aria-hidden="true" tabindex="-1"><a href="">Games</a></li>
-                                    <li class="slick-slide" data-slick-index="9" aria-hidden="true" tabindex="-1"><a href="">Events</a></li>
-                                    <li class="slick-slide" data-slick-index="10" aria-hidden="true" tabindex="-1"><a href="">QPay</a></li>
-                                    <li class="slick-slide" data-slick-index="11" aria-hidden="true" tabindex="-1"><a href="">Gift Card</a></li>
-                                    <li class="slick-slide" data-slick-index="12" aria-hidden="true" tabindex="-1"><a href="">Quicklly Pass</a></li>
-                                    <li class="slick-slide" data-slick-index="13" aria-hidden="true" tabindex="-1"><a href="">Refer a Friend</a></li>
-                                </div>
-                            </div>
-                        </ul>
+    <div id="loader" style="display: none; text-align: center; padding: 20px;">
+        <img src="images/loading.gif" alt="Loading..." style="width: 60px;">
+    </div>
 
-                        <div class="modal" id="sideMenuModal" style="display: none;">
-                            <div class="modal-content">
-                                <div class="user-name">
-                                <span class="u-name">Hello Sanjay</span><span class="close" onclick="closeSideMenu()">&times;</span>
-                                </div>
-                                <div class="aa">
-                                    <h2>Shop by Category</h2>
-                                    <ul>
-                                        <li><a href="#">Groceries</a></li>
-                                        <li><a href="#">Food</a></li>
-                                        <li><a href="#">Nation wide</a></li>
-                                        <li><a href="#">Direct from India</a></li>
-                                        <li><a href="#">Astrology (Shubh Puja)</a></li>
-                                        <li><a href="#">Events</a></li>
-                                        <li><a href="#">Moments</a></li>
-                                        <li><a href="#">Just By Quicklly Meals</a></li>
-                                    </ul>
-                                </div>
-                                <div class="b-border"></div>
-                                <div class="aa">
-                                    <h2>Programs & Features</h2>
-                                    <ul>
-                                        <li><a href="#">QPay</a></li>
-                                        <li><a href="#">Events</a></li>
-                                        <li><a href="#">Recipe</a></li>
-                                        <li><a href="#">Quicklly Pass</a></li>
-                                        <li><a href="#">Gift Card</a></li>
-                                    </ul>
-                                </div>
-                                <div class="b-border"></div>
-                                <div class="aa">
-                                    <h2>Account & Settings</h2>
-                                    <ul>
-                                        <li><a href="#">Your Account</a></li>
-                                        <li><a href="#">Sign out</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    
 
     <div id="index-page" class="index-page">
         <div class="banner-slider">
-            <div>
-                <img src="images/banner.png" alt="Banner 1">
-            </div>
-            <div>
-                <img src="images/banner.png" alt="Banner 2">
-            </div>
-            <div>
-                <img src="images/banner.png" alt="Banner 3">
-            </div>
-            <div>
-                <img src="images/banner.png" alt="Banner 3">
-            </div>
+            <a href="prod-listing">
+                <img id="dynamicBanner" src="" alt="Only Luxury Banner" style="display: none;" />
+            </a>
         </div>
 
-        <div class="category-area">
+        <div class="trending-heading">
             <div class="container">
                 <div class="row">
-                    <div class="cat-heading">
-                        <p>Categories</p>
-                    </div>
-                    <div class="category-slider">
-                        <div class="row">
-                            <div class="grid-container">
-                                <div class="grid-item">
-                                    <a href="#" class="category-item">
-                                        <img src="images/women-cloth.png" alt="" class="img-fluid">
-                                        <p class="text-center">Women’s Clothing</p>
-                                    </a>
-                                </div>
-                                <div class="grid-item">
-                                    <a href="#" class="category-item">
-                                        <img src="images/men-cloth.png" alt="" class="img-fluid">
-                                        <p class="text-center">Men’s Clothing</p>
-                                    </a>
-                                </div>
-                                <div class="grid-item">
-                                    <a href="#" class="category-item">
-                                        <img src="images/jewellery.png" alt="" class="img-fluid">
-                                        <p class="text-center">Jewellery</p>
-                                    </a>
-                                </div>
-                                <div class="grid-item">
-                                    <a href="#" class="category-item">
-                                        <img src="images/bags.png" alt="" class="img-fluid">
-                                        <p class="text-center">Bags & <br>Purses</p>
-                                    </a>
-                                </div>
-                                <div class="grid-item">
-                                    <a href="#" class="category-item">
-                                        <img src="images/home-decor.png" alt="" class="img-fluid">
-                                        <p class="text-center">Home Decor</p>
-                                    </a>
-                                </div>
-                                <div class="grid-item">
-                                    <a href="#" class="category-item">
-                                        <img src="images/appliances.png" alt="" class="img-fluid">
-                                        <p class="text-center">Appliances</p>
-                                    </a>
-                                </div>
-                                <div class="grid-item">
-                                    <a href="#" class="category-item">
-                                        <img src="images/lawn&garden.png" alt="" class="img-fluid">
-                                        <p class="text-center">Patio, Lawn <br>& Garden</p>
-                                    </a>
-                                </div>
-                                <div class="grid-item">
-                                    <a href="#" class="category-item">
-                                        <img src="images/lawn&garden.png" alt="" class="img-fluid">
-                                        <p class="text-center">Patio, Lawn <br>& Garden</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 id="trendingTitle"></h3>
+                    <p id="trendingSubTitle"></p>
                 </div>
             </div>
         </div>
 
-        <div class="three-category">
+        <div class="cat-product">
             <div class="container">
-                <div class="row row-cols-1 row-cols-md-3">
-                    <div class="col">
-                        <div class="card de-card">
-                            <div class="ca-heading">
-                                <span>Men’s fasgion | Upto 25% off</span>
-                                <a href="product-listing.php" class="view-all">View all</a>
-                            </div>
-                            <div class="row category-grid">
-                                <div class="col-md-6">
-                                    <a href="product-listing.php" class="category-item">
-                                        <img src="images/men-1.png" alt="" class="img-fluid">
-                                    </a>
-                                    <p>Organic Peanuts 4 LB</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="product-listing.php" class="category-item">
-                                        <img src="images/men-2.png" alt="" class="img-fluid">
-                                    </a>
-                                    <p>Classic Polo</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="product-listing.php" class="category-item">
-                                        <img src="images/men-3.png" alt="" class="img-fluid">
-                                    </a>
-                                    <p>Casula Shirts</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="product-listing.php" class="category-item">
-                                        <img src="images/men-4.png" alt="" class="img-fluid">
-                                    </a>
-                                    <p>Jeans</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card de-card">
-                            <div class="ca-heading">
-                                <span>Dhirsons Jewellers</span>
-                                <a href="product-listing.php" class="view-all">View all</a>
-                            </div>
-                            <div class="row category-grid">
-                                <div class="col-md-6">
-                                    <a href="product-listing.php" class="category-item">
-                                        <img src="images/jel-1.png" alt="" class="img-fluid">
-                                    </a>
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="product-listing.php" class="category-item">
-                                        <img src="images/jel-2.png" alt="" class="img-fluid">
-                                    </a>
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="product-listing.php" class="category-item">
-                                        <img src="images/jel-3.png" alt="" class="img-fluid">
-                                    </a>
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="product-listing.php" class="category-item">
-                                        <img src="images/jel-4.png" alt="" class="img-fluid">
-                                    </a>
-                                    <p>Name</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card de-card">
-                            <div class="ca-heading">
-                                <span>Women’s fashion | Upto 30% off</span>
-                                <a href="product-listing.php" class="view-all">View all</a>
-                            </div>
-                            <div class="row category-grid">
-                                <div class="col-md-6">
-                                    <a href="product-listing.php" class="category-item">
-                                        <img src="images/women-1.png" alt="" class="img-fluid">
-                                    </a>
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="product-listing.php" class="category-item">
-                                        <img src="images/women-2.png" alt="" class="img-fluid">
-                                    </a>
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="product-listing.php" class="category-item">
-                                        <img src="images/women-3.png" alt="" class="img-fluid">
-                                    </a>
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="product-listing.php" class="category-item">
-                                        <img src="images/women-4.png" alt="" class="img-fluid">
-                                    </a>
-                                    <p>Name</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row" id="productList">
                 </div>
+                <div class="view-catalog">
+                    <a href="prod-listing" class="catalog-btn">View Catalog</a>
+                </div>
+
             </div>
         </div>
 
-        <!-- <div class="brands-area">
+        <div class="cat-collection">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="brand-outer">
-                            <div class="brand-heading">
-                                <span class="heading-left">Best Fashion Brands for you</span>
-                                <span class="view-right"><a href="">View all</a></span>
-                            </div>
-                            <div class="brand-slider">
-                                <div class="brand-slick-slider">
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/brand-1.png" alt="" class="img-fluid">
-                                            <p>M7 Sports, T90…</p>
-                                            <h6>From $20</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/brand-2.png" alt="" class="img-fluid">
-                                            <p>Nike, Skechers…</p>
-                                            <h6>From $20</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/brand-3.png" alt="" class="img-fluid">
-                                            <p>Antique mobile pouches</p>
-                                            <h6>From $5</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/brand-4.png" alt="" class="img-fluid">
-                                            <p>Branded Kurtas</p>
-                                            <h6>From $20</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/brand-5.png" alt="" class="img-fluid">
-                                            <p>Pants, Palazzos…</p>
-                                            <h6>From $20</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/brand-6.png" alt="" class="img-fluid">
-                                            <p>Women’s Scandals…</p>
-                                            <h6>From $20</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/brand-6.png" alt="" class="img-fluid">
-                                            <p>Women’s Scandals…</p>
-                                            <h6>From $20</h6>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
+                        <img src="images/collection-1.png" alt="" class="img-above">
+                        <div class="text-overlay-above">
+                            <h3>Crafted for the Connoisseur</h3>
+                            <p>Love a structured tote or a classic sholder bag? You'll <br>find a curated collection from heritage houses & modern labrls-effortlessly versatile, eternally elegant.</p>
+                            <!-- <button>SHOP NOW</button> -->
+                            <a href="prod-listing" class="shop-btn">SHOP NOW</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <div class="brands-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="brand-outer">
-                            <div class="brand-heading">
-                                <span class="heading-left">Best Fashion Brands for you</span>
-                                <span class="view-right"><a href="product-listing.php">View all</a></span>
-                            </div>
-                            <div class="brand-slider">
-                                <div class="brand-slick-slider">
-                                    <div class="grid-item">
-                                        <a href="product-listing.php" class="category-item">
-                                            <img src="images/brand-1.png" alt="" class="img-fluid">
-                                            <p>M7 Sports, T90…</p>
-                                            <h6>From $20</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="product-listing.php" class="category-item">
-                                            <img src="images/brand-2.png" alt="" class="img-fluid">
-                                            <p>Nike, Skechers…</p>
-                                            <h6>From $20</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="product-listing.php" class="category-item">
-                                            <img src="images/brand-3.png" alt="" class="img-fluid">
-                                            <p>Antique mobile pouches</p>
-                                            <h6>From $5</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="product-listing.php" class="category-item">
-                                            <img src="images/brand-4.png" alt="" class="img-fluid">
-                                            <p>Branded Kurtas</p>
-                                            <h6>From $20</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="product-listing.php" class="category-item">
-                                            <img src="images/brand-5.png" alt="" class="img-fluid">
-                                            <p>Pants, Palazzos…</p>
-                                            <h6>From $20</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="product-listing.php" class="category-item">
-                                            <img src="images/brand-6.png" alt="" class="img-fluid">
-                                            <p>Women’s Sandals…</p>
-                                            <h6>From $20</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="product-listing.php" class="category-item">
-                                            <img src="images/brand-1.png" alt="" class="img-fluid">
-                                            <p>Scandals</p>
-                                            <h6>From $20</h6>
-                                        </a>
-                                    </div>
-                                </div>
+                        <div class="image-block">
+                            <img src="images/collection-2.png" alt="" class="img-below">
+                            <div class="text-overlay-below">
+                                <h3>Luxury Essentials, Beautifully Curated</h3>
+                                <p>The finest in bags, beauty, fragrance—selected from the world’s most iconic names.</p>
                             </div>
                         </div>
                     </div>
@@ -412,527 +481,169 @@
             </div>
         </div>
 
-
-        <div class="jewellery-bag-area">
-            <div class="container">
-                <!-- <div class="col-md-4">
-                    <div class="image-container">
-                        <img src="images/12.png" alt="jewellery">
-                        <div class="text-overlay">
-                            <h4>Dhirsons Jewellers</h4>
-                            <p>Lorem ipsum dolor sit amet, consetetur.</p>
-                            <button>Shop Now</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="image-container">
-                        <img src="images/01.png" alt="bag">
-                        <div class="text-overlay">
-                            <h4>Dhirsons Jewellers</h4>
-                            <p>Lorem ipsum dolor sit amet, consetetur.</p>
-                            <button>Shop Now</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="image-container">
-                        <img src="images/13.png" alt="shoe">
-                        <div class="text-overlay">
-                            <h4>Aquazzura</h4>
-                            <p>Lorem ipsum dolor sit amet, consetetur.</p><br>
-                            <button>Shop Now</button>
-                        </div>
-                    </div>
-                </div> -->
-                <div class="grid-container">
-                    <div class="grid-item">
-                        <div class="image-container">
-                            <img src="images/12.png" alt="jewellery">
-                            <div class="text-overlay">
-                                <h4>Dhirsons Jewellers</h4>
-                                <p>Lorem ipsum dolor sit amet, consetetur.</p>
-                                <a href="store.php">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="image-container">
-                            <img src="images/01.png" alt="bag">
-                            <div class="text-overlay">
-                                <h4>Dhirsons Jewellers</h4>
-                                <p>Lorem ipsum dolor sit amet, consetetur.</p>
-                                <a href="store.php">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="image-container">
-                            <img src="images/13.png" alt="shoe">
-                            <div class="text-overlay">
-                                <h4>Aquazzura</h4>
-                                <p>Lorem ipsum dolor sit amet, consetetur.</p><br>
-                                <a href="store.php">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- <div class="brands-area">
+        <div class="black-coll">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="brand-outer">
-                            <div class="brand-heading">
-                                <span class="heading-left">Best Fashion Brands for you</span>
-                                <span class="view-right">View all</span>
+                        <div class="black-bg">
+                            <div class="heading">
+                                <h3 id="styleSeasonsTitle"></h3>
+                                <p id="styleSeasonsSubtitle"></p>
+                            </div>
+                            <div class="row cart-slider" id="styleSeasonList">
+
                             </div>
 
-                            <button class="prev-button">
-                                <img src="images/arrow-left.svg" alt="Previous">
-                            </button>
-                            <button class="next-button">
-                                <img src="images/arrow-right.svg" alt="Next">
-                            </button>
-
-                            <div class="brand-slider">
-                                <div class="col-md-2">
-                                    <img src="images/brand-1.png" alt="">
-                                    <p>M7 Sports, T90…</p>
-                                    <h6>From $20</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <img src="images/brand-2.png" alt="">
-                                    <p>Nike, Skechers…</p>
-                                    <h6>From $20</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <img src="images/brand-3.png" alt="">
-                                    <p>Antique mobile pouches</p>
-                                    <h6>From $5</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <img src="images/brand-4.png" alt="">
-                                    <p>Branded Kurtas</p>
-                                    <h6>From $20</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <img src="images/brand-5.png" alt="">
-                                    <p>Pants, Palazzos…</p>
-                                    <h6>From $20</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <img src="images/brand-6.png" alt="">
-                                    <p>Women’s Scandals…</p>
-                                    <h6>From $20</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <img src="images/brand-6.png" alt="">
-                                    <p>Women’s Scandals…</p>
-                                    <h6>From $20</h6>
-                                </div>
+                            <div class="explor-btn">
+                                <a href="prod-listing">Explore All</a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <div class="love-brand-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="love-brand-outer">
-                            <div class="love-brand-heading">
-                                <span class="heading-left">Most loved brands</span>
-                            </div>
-                            <div class="love-brand-slider">
-                                <div class="love-brand-slick-slider">
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/loved-1.png" alt="" class="img-fluid">
-                                            <p>DSJ</p>
-                                            <h6>Jewellery</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/loved-2.png" alt="" class="img-fluid">
-                                            <p>BiBa</p>
-                                            <h6>Ethnic Wear</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/loved-3.png" alt="" class="img-fluid">
-                                            <p>Zari</p>
-                                            <h6>Silk Sarees</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/loved-4.png" alt="" class="img-fluid">
-                                            <p>Aquazzura</p>
-                                            <h6>Luxury Shoes</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/loved-1.png" alt="" class="img-fluid">
-                                            <p>DSJ</p>
-                                            <h6>Jewellery</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/loved-2.png" alt="" class="img-fluid">
-                                            <p>BiBa</p>
-                                            <h6>Ethnic Wear</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/loved-3.png" alt="" class="img-fluid">
-                                            <p>Zari</p>
-                                            <h6>Silk Sarees</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/loved-4.png" alt="" class="img-fluid">
-                                            <p>Aquazzura</p>
-                                            <h6>Luxury Shoes</h6>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-area">
-            <div class="container">
-                <div class="row">
-                    <div class="product-heading">
-                        <p>New Collection</p>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="pro-card">
-                            <a href="store.php" class="category-item">
-                            <img src="images/product-1.png" alt="" class="img-fluid">
-                            <!-- <span>Home Decor</span> -->
-                            <div class="storenamewrap">
-                                <div class="storename">Home Decor </div>
-                                <div class="deliverywrap">
-                                    <span class="showratingst">
-                                        <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
-                                </div>
-                            </div>
-                            <p><a href="store.php">View all products</a></p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="pro-card">
-                            <a href="store.php" class="category-item">
-                                <img src="images/product-2.png" alt="" class="img-fluid">
-                                <!-- <span>Home Decor</span> -->
-                                <div class="storenamewrap">
-                                    <div class="storename">Perquisite Luggage Bags</div>
-                                    <div class="deliverywrap">
-                                        <span class="showratingst">
-                                            <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
-                                    </div>
-                                </div>
-                                <p><a href="store.php">View all products</a></p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="pro-card">
-                            <a href="store.php" class="category-item">
-                                <img src="images/product-3.png" alt="" class="img-fluid">
-                                <!-- <span>Home Decor</span> -->
-                                <div class="storenamewrap">
-                                    <div class="storename">Juplay Toys & more</div>
-                                    <div class="deliverywrap">
-                                        <span class="showratingst">
-                                            <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
-                                    </div>
-                                </div>
-                                <p><a href="store.php">View all products</a></p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="pro-card">
-                            <a href="store.php" class="category-item">
-                                <img src="images/product-4.png" alt="" class="img-fluid">
-                                <!-- <span>Home Decor</span> -->
-                                <div class="storenamewrap">
-                                    <div class="storename">zari banaras</div>
-                                    <div class="deliverywrap">
-                                        <span class="showratingst">
-                                            <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
-                                    </div>
-                                </div>
-                                <p><a href="store.php">View all products</a></p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="pro-card">
-                            <a href="store.php" class="category-item">
-                                <img src="images/product-5.png" alt="" class="img-fluid">
-                                <!-- <span>Home Decor</span> -->
-                                <div class="storenamewrap">
-                                    <div class="storename">Mala Singh</div>
-                                    <div class="deliverywrap">
-                                        <span class="showratingst">
-                                            <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
-                                    </div>
-                                </div>
-                                <p><a href="store.php">View all products</a></p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="pro-card">
-                            <a href="store.php" class="category-item">
-                                <img src="images/product-6.png" alt="" class="img-fluid">
-                                <!-- <span>Home Decor</span> -->
-                                <div class="storenamewrap">
-                                    <div class="storename">Monrow</div>
-                                    <div class="deliverywrap">
-                                        <span class="showratingst">
-                                            <img class="star-img" src="images/star.png" alt="decor">4.5 </span>
-                                    </div>
-                                </div>
-                                <p><a href="store.php">View all products</a></p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="top-deal-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="deal-outer">
-                            <div class="deal-heading">
-                                <span class="heading-left">Top Deals on Jewellery</span>
-                                <span class="view-right"><a href="">View all</a></span>
-                            </div>
-                            <!-- <div class="deal-slider">
+                            <div class="image-area">
                                 <div class="row">
-                                    <div class="col">
-                                        <a href="" class="category-item">
-                                            <img src="images/1.png" alt="" class="img-fluid">
-                                            <p>Black Showpieces & Figurines For Home…</p>
-                                            <h6>$34.99</h6>
-                                        </a>
+                                    <div class="col-md-6 col-left">
+                                        <img src="images/coll.png" alt="">
                                     </div>
-                                    <div class="col">
-                                        <a href="" class="category-item">
-                                            <img src="images/2.png" alt="" class="img-fluid">
-                                            <p>Golden and Brown Showpieces & Figurie…</p>
-                                            <h6>$34.99</h6>
-                                        </a>
+                                    <div class="col-md-6 col-right">
+                                        <img src="images/colle.png" alt="">
                                     </div>
-                                    <div class="col">
-                                        <a href="" class="category-item">
-                                            <img src="images/3.png" alt="" class="img-fluid">
-                                            <p>Black Showpieces & Figurines for Home…</p>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                    <div class="col">
-                                        <a href="" class="category-item">
-                                            <img src="images/4.png" alt="" class="img-fluid">
-                                            <p>Chocolate Baklava - Holiday Special Box</p>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                    <div class="col">
-                                        <a href="" class="category-item">
-                                            <img src="images/5.png" alt="" class="img-fluid">
-                                            <p>Assorted Indian Fusion Sweets</p>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                    <div class="col">
-                                        <a href="" class="category-item">
-                                            <img src="images/6.png" alt="" class="img-fluid">
-                                            <p>Izhaar Gift Box</p><br>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <div class="deal-slider">
-                                <div class="deal-slick-slider">
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/1.png" alt="" class="img-fluid">
-                                            <p>Black Showpieces & Figurines For Home…</p>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/2.png" alt="" class="img-fluid">
-                                            <p>Golden and Brown Showpieces & Figurie…</p>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/3.png" alt="" class="img-fluid">
-                                            <p>Black Showpieces & Figurines for Home…</p>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/4.png" alt="" class="img-fluid">
-                                            <p>Chocolate Baklava - Holiday Special Box</p>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/5.png" alt="" class="img-fluid">
-                                            <p>Assorted Indian Fusion Sweets</p>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/6.png" alt="" class="img-fluid">
-                                            <p>Izhaar Gift Box</p><br>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/3.png" alt="" class="img-fluid">
-                                            <p>Black Showpieces & Figurines For Home…</p>
-                                            <h6>$34.99</h6>
-                                        </a>
+                                    <div class="col-md-12 full-image">
+                                        <img src="images/collec.png" alt="">
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="image-slider">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="images/bages.png" alt="">
+                                    </div>
+                                    <!-- <div class="col-md-6 bag-slide">
+                                        <button class="nav-btn left-btn">Previous</button>
+                                        <div class="cart">
+                                            <div class="image-wrap">
+                                                <img src="images/bag-3.png" alt="">
+                                                <span class="discount-badge">10% Off</span>
+                                            </div>
+                                            <p class="prod-name">COACH Polished Pebble Leather Willow Black</p>
+                                            <div class="desc">
+                                                <p>
+                                                    <span class="dis-price">$128.00</span>
+                                                    <span class="original-price">$375.00</span>
+                                                </p>
+                                            </div>
+                                            <div class="add-cart-btn">
+                                                <a href="">Add to Cart</a>
+                                            </div>
+                                        </div>
+                                        <button class="nav-btn right-btn">Next</button>
+                                    </div> -->
+
+                                    <div class="col-md-6">
+                                        <!-- <div class="bag-slider-wrapper">
+                                            <div class="bag-slider">
+                                                <div class="cart">
+                                                    <div class="image-wrap">
+                                                        <img src="images/bag-2.png" alt="">
+                                                        <span class="discount-badge">10% Off</span>
+                                                    </div>
+                                                    <p class="prod-name">COACH Polished Pebble Leather Willow Black</p>
+                                                    <div class="desc">
+                                                        <p><span class="dis-price">$128.00</span> <span class="original-price">$375.00</span></p>
+                                                    </div>
+                                                    <div class="add-cart-btn"><a href="">Add to Cart</a></div>
+                                                </div>
+                                                <div class="cart">
+                                                    <div class="image-wrap">
+                                                        <img src="images/bag-3.png" alt="">
+                                                        <span class="discount-badge">20% Off</span>
+                                                    </div>
+                                                    <p class="prod-name">COACH Polished Pebble Leather Willow Black</p>
+                                                    <div class="desc">
+                                                        <p><span class="dis-price">$150.00</span> <span class="original-price">$300.00</span></p>
+                                                    </div>
+                                                    <div class="add-cart-btn"><a href="">Add to Cart</a></div>
+                                                </div>
+                                                <div class="cart">
+                                                    <div class="image-wrap">
+                                                        <img src="images/bag-2.png" alt="">
+                                                        <span class="discount-badge">30% Off</span>
+                                                    </div>
+                                                    <p class="prod-name">COACH Polished Pebble Leather Willow Black</p>
+                                                    <div class="desc">
+                                                        <p><span class="dis-price">$99.00</span> <span class="original-price">$199.00</span></p>
+                                                    </div>
+                                                    <div class="add-cart-btn"><a href="">Add to Cart</a></div>
+                                                </div>
+                                                <div class="cart">
+                                                    <div class="image-wrap">
+                                                        <img src="images/bag-3.png" alt="">
+                                                        <span class="discount-badge">15% Off</span>
+                                                    </div>
+                                                    <p class="prod-name">COACH Polished Pebble Leather Willow Black</p>
+                                                    <div class="desc">
+                                                        <p><span class="dis-price">$180.00</span> <span class="original-price">$220.00</span></p>
+                                                    </div>
+                                                    <div class="add-cart-btn"><a href="">Add to Cart</a></div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="bag-slider-wrapper">
+                                            <div class="bag-slider" id="dynamicSlider"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- <div class="jewellery-bag-area">
+        <div class="three-bag">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="image-container">
-                            <img src="images/12.png" alt="jewellery">
-                            <div class="text-overlay">
-                                <h4>Dhirsons Jewellers</h4>
-                                <p>Lorem ipsum dolor sit amet, consetetur.</p>
-                                <button>Shop Now</button>
-                            </div>
-                        </div>
+                    <div class="col-md-4 col-first">
+                        <img src="images/decor-1.png" alt="">
+                        <p>COACH Quilted Leather Mini<br> Tabby Sho Brass Maple</p>
                     </div>
-                    <div class="col-md-4">
-                        <div class="image-container">
-                            <img src="images/01.png" alt="bag">
-                            <div class="text-overlay">
-                                <h4>Dhirsons Jewellers</h4>
-                                <p>Lorem ipsum dolor sit amet, consetetur.</p>
-                                <button>Shop Now</button>
-                            </div>
-                        </div>
+                    <div class="col-md-4 col-sec">
+                        <img src="images/decor-2.png" alt="">
+                        <p>COACH Quilted Leather Mini<br> Tabby Sho Brass Maple</p>
                     </div>
-                    <div class="col-md-4">
-                        <div class="image-container">
-                            <img src="images/13.png" alt="shoe">
-                            <div class="text-overlay">
-                                <h4>Aquazzura</h4>
-                                <p>Lorem ipsum dolor sit amet, consetetur.</p><br>
-                                <button>Shop Now</button>
-                            </div>
-                        </div>
+                    <div class="col-md-4 col-third">
+                        <img src="images/decor-3.png" alt="">
+                        <p>COACH Quilted Leather Mini<br> Tabby Sho Brass Maple</p>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
-        <div class="jewellery-bag-area">
+        <div class="two-bag">
             <div class="container">
                 <div class="row">
-                    <!-- <div class="col-md-4">
-                        <div class="image-container">
-                            <img src="images/12.png" alt="jewellery">
-                            <div class="text-overlay">
-                                <h4>Dhirsons Jewellers</h4>
-                                <p>Lorem ipsum dolor sit amet, consetetur.</p>
-                                <button>Shop Now</button>
+                    <div class="col-md-6 col-first">
+                        <img src="images/12.png" alt="">
+                        <div class="image-text">
+                            <img src="images/bag-3.png" alt="">
+                            <div class="text-block">
+                                <h3>COACH Quilted Leather Mini Tabby Sho <br> Brass Maple</h3>
+                                <p>
+                                    <span class="dis-price">$128.00</span>
+                                    <span class="original-price">$375.00</span>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="image-container">
-                            <img src="images/01.png" alt="bag">
-                            <div class="text-overlay">
-                                <h4>Dhirsons Jewellers</h4>
-                                <p>Lorem ipsum dolor sit amet, consetetur.</p>
-                                <button>Shop Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="image-container">
-                            <img src="images/13.png" alt="shoe">
-                            <div class="text-overlay">
-                                <h4>Aquazzura</h4>
-                                <p>Lorem ipsum dolor sit amet, consetetur.</p><br>
-                                <button>Shop Now</button>
-                            </div>
-                        </div>
-                    </div> -->
-                    <div class="grid-container">
-                        <div class="grid-item">
-                            <div class="image-container">
-                                <img src="images/12.png" alt="jewellery">
-                                <div class="text-overlay">
-                                    <h4>Dhirsons Jewellers</h4>
-                                    <p>Lorem ipsum dolor sit amet, consetetur.</p>
-                                    <a href="store.php">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="image-container">
-                                <img src="images/01.png" alt="bag">
-                                <div class="text-overlay">
-                                    <h4>Dhirsons Jewellers</h4>
-                                    <p>Lorem ipsum dolor sit amet, consetetur.</p>
-                                    <a href="store.php">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="image-container">
-                                <img src="images/13.png" alt="shoe">
-                                <div class="text-overlay">
-                                    <h4>Aquazzura</h4>
-                                    <p>Lorem ipsum dolor sit amet, consetetur.</p><br>
-                                    <a href="store.php">Shop Now</a>
-                                </div>
+                    <div class="col-md-6 col-sec">
+                        <img src="images/13.png" alt="">
+                        <div class="image-text">
+                            <img src="images/bag-3.png" alt="">
+                            <div class="text-block">
+                                <h3>COACH Quilted Leather Mini Tabby Sho <br> Brass Maple</h3>
+                                <p>
+                                    <span class="dis-price">$128.00</span>
+                                    <span class="original-price">$375.00</span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -940,369 +651,30 @@
             </div>
         </div>
 
-        <div class="decor-area">
+        <div class="lastdiv">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="decor-outer">
-                            <div class="decor-heading">
-                                <span class="heading-left">Home Decor Recommendations</span>
-                                <span class="view-right"><a href="">View all</a></span>
-                            </div>
-                            <div class="decor-slider">
-                                <div class="decor-slick-slider">
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/decor-1.png" alt="" class="img-fluid">
-                                            <p>Black Showpieces & Figurines For Home…</p>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/decor-2.png" alt="" class="img-fluid">
-                                            <p>Golden and Brown Showpieces & Figurie…</p>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/decor-3.png" alt="" class="img-fluid">
-                                            <p>Black Showpieces & Figurines for Home…</p>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/decor-4.png" alt="" class="img-fluid">
-                                            <p>Chocolate Baklava - Holiday Special Box</p>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/decor-5.png" alt="" class="img-fluid">
-                                            <p>Assorted Indian Fusion Sweets</p>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/decor-6.png" alt="" class="img-fluid">
-                                            <p>Izhaar Gift Box</p><br>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                    <div class="grid-item">
-                                        <a href="#" class="category-item">
-                                            <img src="images/decor-7.png" alt="" class="img-fluid">
-                                            <p>Black Showpieces & Figurines For Home…</p>
-                                            <h6>$34.99</h6>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="heading">
+                        <h3>Uncover Iconic Pieces</h3>
+                        <p>Shop our collection, curated for fashion connoisseurs who prefer the extraordinary in everyday style.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 f-cls">
+                        <img src="images/09.png" alt="">
+                    </div>
+                    <div class="col-md-4 s-cls">
+                        <img src="images/090.png" alt="">
+                    </div>
+                    <div class="col-md-4 t-cls">
+                        <img src="images/0900.png" alt="">
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="accessories-area">
-            <div class="container">
-                <div class="row row-cols-1 row-cols-md-3">
-                    <div class="col-md-6">
-                        <div class="card de-card">
-                            <div class="ca-heading">
-                                <span>Car Accessories</span>
-                                <a href="#" class="view-all">View all</a>
-                            </div>
-                            <div class="row accer-grid">
-                                <div class="col-md-4">
-                                    <img src="images/accessories-1.png" alt="">
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="images/accessories-2.png" alt="">
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="images/accessories-3.png" alt="">
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="images/accessories-4.png" alt="">
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="images/accessories-5.png" alt="">
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="images/accessories-6.png" alt="">
-                                    <p>Name</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card de-card">
-                            <div class="ca-heading">
-                                <span>Electronics & Appliances</span>
-                                <a href="#" class="view-all">View all</a>
-                            </div>
-                            <div class="row accer-grid">
-                                <div class="col-md-4">
-                                    <img src="images/appliance-1.png" alt="">
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="images/appliance-2.png" alt="">
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="images/appliance-3.png" alt="">
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="images/appliance-4.png" alt="">
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="images/appliance-5.png" alt="">
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="images/appliance-6.png" alt="">
-                                    <p>Name</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
     </div>
-
-    <script>
-        $(document).ready(function() {
-            $('.banner-slider').slick({
-                dots: true,
-                infinite: true,
-                speed: 500,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: false,
-                autoplaySpeed: 3000,
-                arrows: false,
-            });
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $('.love-brand-slick-slider').slick({
-                slidesToShow: 7,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                arrows: true,
-                dots: false,
-                infinite: true,
-                responsive: [{
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 3
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1
-                        }
-                    }
-                ]
-            });
-        });
-    </script>
-
-    <!-- <script>
-        $(document).ready(function() {
-            $('.brand-slick-slider').slick({
-                slidesToShow: 6, // Show 6 full images
-                slidesToScroll: 1, // Scroll one at a time
-                autoplay: false, // Auto slide enabled
-                autoplaySpeed: 2000, // Every 2 seconds
-                arrows: true, // Enable next/prev arrows
-                dots: true, // Enable navigation dots
-                infinite: true, // Infinite looping
-                centerMode: false, // Enable centering for partial next slide
-                variableWidth: false, // Disable variable width (keeps items same size)
-                responsive: [{
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 3 // Show 3 slides on medium screens
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2 // Show 2 slides on tablets
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1 // Show 1 slide on mobile
-                        }
-                    }
-                ]
-            });
-        });
-    </script> -->
-
-    <script>
-        $(document).ready(function() {
-            $('.brand-slick-slider').slick({
-                slidesToShow: 6,
-                slidesToScroll: 1,
-                autoplay: false,
-                autoplaySpeed: 2000,
-                arrows: true,
-                dots: false,
-                infinite: true,
-                centerMode: false,
-                variableWidth: false,
-                prevArrow: '<button type="button" class="slick-prev"><img src="images/left-arrow.png" alt="Previous" /></button>', // Left arrow
-                nextArrow: '<button type="button" class="slick-next"><img src="images/right-arrow.png" alt="Next" /></button>', // Right arrow 
-                responsive: [{
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 3
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1
-                        }
-                    }
-                ]
-            });
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $('.deal-slick-slider').slick({
-                slidesToShow: 6, // Show 6 full images
-                slidesToScroll: 1, // Scroll one at a time
-                autoplay: false, // Disable auto sliding
-                autoplaySpeed: 2000, // Set auto speed (if autoplay is enabled)
-                arrows: true, // Enable navigation arrows
-                dots: false, // Enable navigation dots
-                infinite: true, // Enable infinite scrolling
-                centerMode: false, // Keep slides aligned to the left
-                variableWidth: false, // Maintain equal width for slides
-                prevArrow: '<button type="button" class="slick-prev"><img src="images/left-arrow.png" alt="Previous" /></button>',
-                nextArrow: '<button type="button" class="slick-next"><img src="images/right-arrow.png" alt="Next" /></button>',
-                responsive: [{
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 3 // Show 3 slides on medium screens
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2 // Show 2 slides on tablets
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1 // Show 1 slide on mobile
-                        }
-                    }
-                ]
-            });
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $('.decor-slick-slider').slick({
-                slidesToShow: 6,
-                slidesToScroll: 1,
-                autoplay: false,
-                autoplaySpeed: 2000,
-                arrows: true,
-                dots: false,
-                infinite: true,
-                centerMode: false,
-                variableWidth: false,
-                prevArrow: '<button type="button" class="slick-prev"><img src="images/left-arrow.png" alt="Previous" /></button>',
-                nextArrow: '<button type="button" class="slick-next"><img src="images/right-arrow.png" alt="Next" /></button>',
-                responsive: [{
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 3
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1
-                        }
-                    }
-                ]
-            });
-        });
-    </script>
-
-    <!-- <script>
-        function opensidemenu() {
-            const modal = document.getElementById('sideMenuModal');
-            modal.style.display = 'block'; 
-            setTimeout(() => {
-                modal.classList.add('active'); 
-            }, 10);
-        }
-
-        function closeSideMenu() {
-            const modal = document.getElementById('sideMenuModal');
-            modal.classList.remove('active'); 
-            setTimeout(() => {
-                modal.style.display = 'none'; 
-            }, 300);
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('sideMenuModal');
-            if (event.target === modal) {
-                closeSideMenu();
-            }
-        };
-    </script> -->
 
 
 </body>

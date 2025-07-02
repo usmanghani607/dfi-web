@@ -60,8 +60,8 @@
                 </div>
                 <div class="col-md-3">
                     <div class="widgth_app">
-                        <div class="float-left"><a href="https://apps.apple.com/us/app/quicklly/id1536958907" target="_blank"><img src="images/apple-icon.png"><br> Download <br>iOS APP</a></div>
-                        <div class="float-left"><a href="https://play.google.com/store/apps/details?id=com.quicklly.androidquicklly" target="_blank"><img src="images/android-icon.png"> <br>Download <br>Android APP</a></div>
+                        <div class="float-left"><a href="https://apps.apple.com/us/app/quicklly/id1536958907" target="_blank"><img src="<?= $baseURL ?>images/apple-icon.png"><br> Download <br>iOS APP</a></div>
+                        <div class="float-left"><a href="https://play.google.com/store/apps/details?id=com.quicklly.androidquicklly" target="_blank"><img src="<?= $baseURL ?>images/android-icon.png"> <br>Download <br>Android APP</a></div>
                     </div>
                 </div>
 

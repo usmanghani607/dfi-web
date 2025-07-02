@@ -1,4 +1,32 @@
-# Enable mod_rewrite
+# # Enable mod_rewrite
+# RewriteEngine On
+
+# # Protect the .htaccess file
+# <Files ".htaccess">
+#     Order Allow,Deny
+#     Deny from all
+# </Files>
+
+# # Handle root URL ("/")
+# RewriteRule ^$ index.php [L]
+
+
+# # Exclude "products" page from being rewritten
+# RewriteRule ^prod-listing$ prod-listing.php [L]
+# RewriteRule ^prod-detail$ prod-details.php [L]
+
+
+# # Rewrite to event-detail.php for slugs
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+
+
+# # Rewrite all other URLs to .php files
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^(.*)$ $1.php [L]
+
+
+
 RewriteEngine On
 
 # Protect the .htaccess file
@@ -7,22 +35,23 @@ RewriteEngine On
     Deny from all
 </Files>
 
-# Handle root URL ("/")
+# Handle root
 RewriteRule ^$ index.php [L]
 
-# Exclude "order" page from being rewritten
-RewriteRule ^order$ order.php [L]
-RewriteRule ^meta$ meta.php [L]
+# Static page rewrites
+RewriteRule ^prod-listing$ prod-listing.php [L]
+RewriteRule ^prod-detail$ prod-details.php [L]
 
-# Rewrite to event-detail.php for slugs
+# Rewrite pretty product detail URL
+RewriteRule ^prod-details/([0-9]+)$ prod-details.php?id=$1 [QSA,L]
+
+# Rewrite pretty category URLs like /prod-listing/category=Bag
+# RewriteRule ^prod-listing/category=(.+)$ prod-listing.php?category=$1 [QSA,L]
+
+# Route URLs like prod-details/8280673026227 to prod-details/prod-details.php?id=8280673026227
+RewriteRule ^prod-details/([0-9]+)$ prod-details/prod-details.php?id=$1 [L,QSA]
+
+# Fallback to .php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^/]+)$ event-detail.php?slug=$1 [L,QSA]
-
-# Rewrite all other URLs to .php files
-RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ $1.php [L]
-
-
-SetEnv LOGIN_EMAIL "ios-app@quicklly.com"
-SetEnv LOGIN_PASSWORD "vqdspaway8"
